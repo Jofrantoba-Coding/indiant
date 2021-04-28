@@ -42,7 +42,7 @@ public class TestDaoEstadoMiembroUpdate {
     @Test
     void updateEntity1() throws UnknownException {
         DaoEstadoCuenta dao = new DaoEstadoCuenta();
-        EstadoCuenta entity = dao.findEntity(null, 1, "P");
+        EstadoCuenta entity = dao.findEntity(null, 1, "R");
         entity.setDescripcion("PEND");
         entity.setVersion(5L);
         System.err.println(JDOHelper.getObjectState(entity));
@@ -60,16 +60,6 @@ public class TestDaoEstadoMiembroUpdate {
     
     @Test
     void updateEntity3() throws UnknownException {                
-        DaoEstadoCuenta dao = new DaoEstadoCuenta();
-        EstadoCuenta entity=dao.findEntity(null, 1, "E");
-        entity.setDescripcion("ELI");
-        entity.setVersion(7L);
-        System.err.println(JDOHelper.getObjectState(entity));
-        dao.saveOrUpdate(entity);
-    }
-    
-    @Test
-    void updateEntity4() throws UnknownException {                
         DaoEstadoCuenta dao = new DaoEstadoCuenta();
         EstadoCuenta entity=dao.findEntity(null, 1, "A");
         entity.setDescripcion("ACT");

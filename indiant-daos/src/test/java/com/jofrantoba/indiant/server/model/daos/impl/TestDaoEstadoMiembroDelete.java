@@ -39,24 +39,19 @@ public class TestDaoEstadoMiembroDelete {
     @Test
     void deleteEntity1() throws UnknownException {
         DaoEstadoMiembro dao = new DaoEstadoMiembro();
-        dao.delete("P", "id");
+        dao.delete("R", "id");
     }
 
     @Test
     void deleteEntity2() throws UnknownException {
         DaoEstadoMiembro dao = new DaoEstadoMiembro();
-        dao.delete("E", "id");
+        dao.delete("D", "id");
     }
 
     @Test
     void deleteEntity3() throws UnknownException {
         DaoEstadoMiembro dao = new DaoEstadoMiembro();
-        dao.delete("D", "id");
-    }
-
-    @Test
-    void deleteEntity4() throws UnknownException {
-        DaoEstadoMiembro dao = new DaoEstadoMiembro();
         dao.delete("A", "id");
-    }    
+    }
+    
 }
