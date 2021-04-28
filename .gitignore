@@ -28,3 +28,16 @@ target/
 # Files configuration Netbeans 11
 nb-configuration.xml
 nbactions.xml
+
+# Files visual code config
+.project
+.settings/
+indiant-beans/.classpath
+indiant-beans/.factorypath
+indiant-beans/.project
+indiant-beans/.settings/
+indiant-daos/.classpath
+indiant-daos/.factorypath
+indiant-daos/.project
+indiant-daos/.settings/
+workspace.code-indiant.code-workspace
