@@ -5,7 +5,7 @@
  */
 package com.jofrantoba.indiant.server.model.daos.impl;
 
-import com.jofrantoba.indiant.server.model.beans.EstadoCuenta;
+import com.jofrantoba.indiant.server.model.beans.EstadoMiembro;
 import com.jofrantoba.model.jdo.shared.UnknownException;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -39,34 +39,34 @@ public class TestDaoEstadoMiembroInsert {
 
     @Test
     void createEntity1() throws UnknownException {
-        EstadoCuenta entity = new EstadoCuenta();
+        EstadoMiembro entity = new EstadoMiembro();
         entity.setId("R");
         entity.setDescripcion("RETIRADO (FUERA DEL RANGO DE LA COLONIA)");
         entity.setIsPersistente(Boolean.TRUE);
         entity.setVersion(1L);
-        DaoEstadoCuenta dao = new DaoEstadoCuenta();
+        DaoEstadoMiembro dao = new DaoEstadoMiembro();
         dao.saveOrUpdate(entity);
     }
 
     @Test
     void createEntity2() throws UnknownException {
-        EstadoCuenta entity = new EstadoCuenta();
+        EstadoMiembro entity = new EstadoMiembro();
         entity.setId("D");
         entity.setDescripcion("DESACTIVO (ABANDONÓ LA COLONIA POR DECISIÓN)");
         entity.setVersion(1L);
         entity.setIsPersistente(Boolean.TRUE);
-        DaoEstadoCuenta dao = new DaoEstadoCuenta();
+        DaoEstadoMiembro dao = new DaoEstadoMiembro();
         dao.saveOrUpdate(entity);
     }
 
     @Test
     void createEntity3() throws UnknownException {
-        EstadoCuenta entity = new EstadoCuenta();
+        EstadoMiembro entity = new EstadoMiembro();
         entity.setId("A");
         entity.setDescripcion("ACTIVO (DENTRO DEL RANGO DE LA COLONIA)");
         entity.setIsPersistente(Boolean.TRUE);
         entity.setVersion(1L);
-        DaoEstadoCuenta dao = new DaoEstadoCuenta();
+        DaoEstadoMiembro dao = new DaoEstadoMiembro();
         dao.saveOrUpdate(entity);
     }
         

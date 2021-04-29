@@ -5,7 +5,7 @@
  */
 package com.jofrantoba.indiant.server.model.daos.impl;
 
-import com.jofrantoba.indiant.server.model.beans.EstadoCuenta;
+import com.jofrantoba.indiant.server.model.beans.EstadoMiembro;
 import com.jofrantoba.model.jdo.shared.UnknownException;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -41,18 +41,18 @@ public class TestDaoEstadoMiembroUpdate {
 
     @Test
     void updateEntity1() throws UnknownException {
-        DaoEstadoCuenta dao = new DaoEstadoCuenta();
-        EstadoCuenta entity = dao.findEntity(null, 1, "P");
-        entity.setDescripcion("PEND");
+        DaoEstadoMiembro dao = new DaoEstadoMiembro();
+        EstadoMiembro entity = dao.findEntity(null, 1, "R");
+        entity.setDescripcion("RET");
         entity.setVersion(5L);
         System.err.println(JDOHelper.getObjectState(entity));
         dao.saveOrUpdate(entity);
     }   
     @Test
     void updateEntity2() throws UnknownException {                
-        DaoEstadoCuenta dao = new DaoEstadoCuenta();
-        EstadoCuenta entity=dao.findEntity(null, 1, "D");
-        entity.setDescripcion("DES");
+        DaoEstadoMiembro dao = new DaoEstadoMiembro();
+        EstadoMiembro entity=dao.findEntity(null, 1, "A");
+        entity.setDescripcion("ACT");
         entity.setVersion(6L);
         System.err.println(JDOHelper.getObjectState(entity));
         dao.saveOrUpdate(entity);
@@ -60,21 +60,12 @@ public class TestDaoEstadoMiembroUpdate {
     
     @Test
     void updateEntity3() throws UnknownException {                
-        DaoEstadoCuenta dao = new DaoEstadoCuenta();
-        EstadoCuenta entity=dao.findEntity(null, 1, "E");
-        entity.setDescripcion("ELI");
+        DaoEstadoMiembro dao = new DaoEstadoMiembro();
+        EstadoMiembro entity=dao.findEntity(null, 1, "D");
+        entity.setDescripcion("DES");
         entity.setVersion(7L);
         System.err.println(JDOHelper.getObjectState(entity));
         dao.saveOrUpdate(entity);
     }
-    
-    @Test
-    void updateEntity4() throws UnknownException {                
-        DaoEstadoCuenta dao = new DaoEstadoCuenta();
-        EstadoCuenta entity=dao.findEntity(null, 1, "A");
-        entity.setDescripcion("ACT");
-        entity.setVersion(7L);
-        System.err.println(JDOHelper.getObjectState(entity));
-        dao.saveOrUpdate(entity);
-    }
+        
 }
