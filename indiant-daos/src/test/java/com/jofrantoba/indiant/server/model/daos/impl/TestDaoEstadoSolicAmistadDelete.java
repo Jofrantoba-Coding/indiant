@@ -3,27 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.jofrantoba.indiant.server.model.beans;
+package com.jofrantoba.indiant.server.model.daos.impl;
 
+import com.jofrantoba.model.jdo.shared.UnknownException;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import lombok.extern.log4j.Log4j2;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
  *
  * @author jona
  */
 @Log4j2
-public class TestEstadoAmistad {
+public class TestDaoEstadoSolicAmistadDelete {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
     private final PrintStream originalErr = System.err;
-    
+
     @Before
     public void setUpStreams() {
         System.setOut(new PrintStream(outContent));
@@ -35,17 +35,23 @@ public class TestEstadoAmistad {
         System.setOut(originalOut);
         System.setErr(originalErr);
     }
-    
+     
     @Test
-    void callContextSpring(){   
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ConfigEntity.class);
-        EstadoAmistad bean = context.getBean(EstadoAmistad.class);        
-        bean.setId("A");        
-        EstadoAmistad bean1 = context.getBean(EstadoAmistad.class);
-        bean1.setId("B");    
-        System.out.println(bean.getId());
-        System.out.println(bean1.getId());
-        context.close();
+    void deleteEntity1() throws UnknownException {
+        DaoEstadoSolicAmistad dao = new DaoEstadoSolicAmistad();
+        dao.delete("R", "id");
+    }
+
+    @Test
+    void deleteEntity2() throws UnknownException {
+        DaoEstadoSolicAmistad dao = new DaoEstadoSolicAmistad();
+        dao.delete("P", "id");
+    }
+
+    @Test
+    void deleteEntity3() throws UnknownException {
+        DaoEstadoSolicAmistad dao = new DaoEstadoSolicAmistad();
+        dao.delete("A", "id");
     }
     
 }
