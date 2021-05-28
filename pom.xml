@@ -11,9 +11,10 @@
     <version>0.0.0.1</version>
     <packaging>pom</packaging>
     <modules>
-        <module>indiant-beans</module>
-        <module>indiant-daos</module>
         <module>../jofrantoba-model-jdo</module>
+        <module>indiant-beans-datanucleus</module>
+        <module>indiant-daos-datanucleus</module>
+        <module>indiant-shared</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> 

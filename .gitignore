@@ -32,12 +32,12 @@ nbactions.xml
 # Files visual code config
 .project
 .settings/
-indiant-beans/.classpath
-indiant-beans/.factorypath
-indiant-beans/.project
-indiant-beans/.settings/
-indiant-daos/.classpath
-indiant-daos/.factorypath
-indiant-daos/.project
-indiant-daos/.settings/
+indiant-beans-datanucleus/.classpath
+indiant-beans-datanucleus/.factorypath
+indiant-beans-datanucleus/.project
+indiant-beans-datanucleus/.settings/
+indiant-daos-datanucleus/.classpath
+indiant-daos-datanucleus/.factorypath
+indiant-daos-datanucleus/.project
+indiant-daos-datanucleus/.settings/
 workspace.code-indiant.code-workspace
