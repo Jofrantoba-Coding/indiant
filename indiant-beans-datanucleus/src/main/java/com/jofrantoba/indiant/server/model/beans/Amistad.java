@@ -25,9 +25,8 @@ public class Amistad implements InterEntity{
 	private Long version;
 	@NotPersistent
 	private String operacion;
-	@Persistent
-	
-	private EstadoAmistad beanEstadoAmistad;
+	@Persistent	
+	private FriendshipStatus beanEstadoAmistad;
 	@Persistent
 	private String codeEstadoAmistad;
 	@Persistent
@@ -149,10 +148,10 @@ public class Amistad implements InterEntity{
 	public void setOperacion(String operacion) {
 		this.operacion = operacion;
 	}
-	public EstadoAmistad getBeanEstadoAmistad() {
+	public FriendshipStatus getBeanEstadoAmistad() {
 		return beanEstadoAmistad;
 	}
-	public void setBeanEstadoAmistad(EstadoAmistad beanEstadoAmistad) {
+	public void setBeanEstadoAmistad(FriendshipStatus beanEstadoAmistad) {
 		this.beanEstadoAmistad = beanEstadoAmistad;
 	}
 	public String getCodeEstadoAmistad() {

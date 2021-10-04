@@ -9,24 +9,24 @@
     <artifactId>indiant-daos-datanucleus</artifactId>
     <packaging>jar</packaging>
     <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
         <version.indiant>0.0.0.1</version.indiant>       
-        <version.jofrantoba-model-jdo>0.0.1-SNAPSHOT</version.jofrantoba-model-jdo>
+        <version.jofrantoba-model-jdo>1.0.0-SNAPSHOT</version.jofrantoba-model-jdo>
         <version.datanucleus-maven-plugin>5.2.1</version.datanucleus-maven-plugin>
     </properties>
     <name>indiant-daos-datanucleus</name>
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>indiant-beans</artifactId>
+            <artifactId>indiant-beans-datanucleus</artifactId>
             <version>${project.version}</version> 
             <type>jar</type>
             <scope>compile</scope>
         </dependency>                        
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>indiant-beans</artifactId>
+            <artifactId>indiant-beans-datanucleus</artifactId>
             <version>${project.version}</version>
             <classifier>sources</classifier>                  
         </dependency>
@@ -72,7 +72,16 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>            
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                </configuration>
+            </plugin>
         </plugins>        
     </build>
 </project>

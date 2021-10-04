@@ -28,7 +28,7 @@ public class SolicitudAmistad implements InterEntity {
 	private String operacion;
 	@Persistent
 	
-	private EstadoSolicAmistad beanEstadoSolicAmistad;
+	private FriendRequestStatus beanEstadoSolicAmistad;
 	@Persistent
 	private String codeEstadoSolicAmistad;
 	@Persistent
@@ -76,10 +76,10 @@ public class SolicitudAmistad implements InterEntity {
 	public void setOperacion(String operacion) {
 		this.operacion = operacion;
 	}
-	public EstadoSolicAmistad getBeanEstadoSolicAmistad() {
+	public FriendRequestStatus getBeanEstadoSolicAmistad() {
 		return beanEstadoSolicAmistad;
 	}
-	public void setBeanEstadoSolicAmistad(EstadoSolicAmistad beanEstadoSolicAmistad) {
+	public void setBeanEstadoSolicAmistad(FriendRequestStatus beanEstadoSolicAmistad) {
 		this.beanEstadoSolicAmistad = beanEstadoSolicAmistad;
 	}
 	public String getCodeEstadoSolicAmistad() {

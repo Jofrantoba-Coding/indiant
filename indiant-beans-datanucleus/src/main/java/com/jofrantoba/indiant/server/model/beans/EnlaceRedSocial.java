@@ -39,7 +39,7 @@ public class EnlaceRedSocial implements InterEntity {
 	private String codeRedSocial;
 	@Persistent	
 	
-	private CuentaTurista beanCuentaTurista;
+	private UserAccount beanCuentaTurista;
 	@Persistent
 	private String codeCuentaTurista;
 	@Persistent	
@@ -110,10 +110,10 @@ public class EnlaceRedSocial implements InterEntity {
 	public void setCodeRedSocial(String codeRedSocial) {
 		this.codeRedSocial = codeRedSocial;
 	}
-	public CuentaTurista getBeanCuentaTurista() {
+	public UserAccount getBeanCuentaTurista() {
 		return beanCuentaTurista;
 	}
-	public void setBeanCuentaTurista(CuentaTurista beanCuentaTurista) {
+	public void setBeanCuentaTurista(UserAccount beanCuentaTurista) {
 		this.beanCuentaTurista = beanCuentaTurista;
 	}
 	public String getCodeCuentaTurista() {

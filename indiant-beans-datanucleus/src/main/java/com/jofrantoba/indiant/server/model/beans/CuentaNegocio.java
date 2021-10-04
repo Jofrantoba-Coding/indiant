@@ -38,7 +38,7 @@ public class CuentaNegocio implements InterEntity {
 	private String operacion;
 	@Persistent
 	
-	private EstadoCuenta beanEstadoCuenta;
+	private AccountStatus beanEstadoCuenta;
 	@Persistent
 	private String codeEstadoCuenta;	
 	@Persistent(mappedBy="beanCuentaNegocio")
@@ -95,10 +95,10 @@ public class CuentaNegocio implements InterEntity {
 	public void setOperacion(String operacion) {
 		this.operacion = operacion;
 	}
-	public EstadoCuenta getBeanEstadoCuenta() {
+	public AccountStatus getBeanEstadoCuenta() {
 		return beanEstadoCuenta;
 	}
-	public void setBeanEstadoCuenta(EstadoCuenta beanEstadoCuenta) {
+	public void setBeanEstadoCuenta(AccountStatus beanEstadoCuenta) {
 		this.beanEstadoCuenta = beanEstadoCuenta;
 	}	
 	public SolicitudCuentaNegocio getBeanSolicitudCuentaNegocio() {

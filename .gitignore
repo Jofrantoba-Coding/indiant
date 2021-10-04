@@ -32,6 +32,8 @@ nbactions.xml
 # Files visual code config
 .project
 .settings/
+.factorypath
+.classpath
 indiant-beans-datanucleus/.classpath
 indiant-beans-datanucleus/.factorypath
 indiant-beans-datanucleus/.project

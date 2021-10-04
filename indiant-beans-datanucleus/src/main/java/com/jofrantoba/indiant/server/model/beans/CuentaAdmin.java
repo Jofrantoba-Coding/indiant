@@ -26,7 +26,7 @@ public class CuentaAdmin implements InterEntity {
 	private java.util.Date fechaCreacion;
 	@Persistent
 	
-	private EstadoCuenta estadoCuenta;
+	private AccountStatus estadoCuenta;
 	@Persistent
 	private String codeEstadoCuenta;
 	@Persistent
@@ -90,10 +90,10 @@ public class CuentaAdmin implements InterEntity {
 	public void setIdUsuarioAdmin(String idUsuarioAdmin) {
 		this.idUsuarioAdmin = idUsuarioAdmin;
 	}
-	public EstadoCuenta getEstadoCuenta() {
+	public AccountStatus getEstadoCuenta() {
 		return estadoCuenta;
 	}
-	public void setEstadoCuenta(EstadoCuenta estadoCuenta) {
+	public void setEstadoCuenta(AccountStatus estadoCuenta) {
 		this.estadoCuenta = estadoCuenta;
 	}
 	public String getCodeEstadoCuenta() {

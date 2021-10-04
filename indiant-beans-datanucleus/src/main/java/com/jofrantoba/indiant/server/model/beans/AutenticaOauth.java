@@ -36,7 +36,7 @@ public class AutenticaOauth implements InterEntity {
 	private String codeRedSocial;
 	@Persistent	
 	
-	private CuentaTurista beanCuentaTurista;
+	private UserAccount beanCuentaTurista;
 	@Persistent
 	private String codeCuentaTurista;
 	@Persistent
@@ -69,7 +69,7 @@ public class AutenticaOauth implements InterEntity {
 	public String getCodeRedSocial() {
 		return codeRedSocial;
 	}
-	public CuentaTurista getBeanCuentaTurista() {
+	public UserAccount getBeanCuentaTurista() {
 		return beanCuentaTurista;
 	}
 	public String getCodeCuentaTurista() {
@@ -102,7 +102,7 @@ public class AutenticaOauth implements InterEntity {
 	public void setCodeRedSocial(String codeRedSocial) {
 		this.codeRedSocial = codeRedSocial;
 	}
-	public void setBeanCuentaTurista(CuentaTurista beanCuentaTurista) {
+	public void setBeanCuentaTurista(UserAccount beanCuentaTurista) {
 		this.beanCuentaTurista = beanCuentaTurista;
 	}
 	public void setCodeCuentaTurista(String codeCuentaTurista) {

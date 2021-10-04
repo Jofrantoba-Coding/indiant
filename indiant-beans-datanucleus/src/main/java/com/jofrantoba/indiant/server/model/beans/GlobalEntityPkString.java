@@ -30,7 +30,7 @@ public abstract class GlobalEntityPkString implements InterEntity{
     @Persistent          
     private Long version;    
     @Persistent       
-    private Boolean isPersistente;
+    private Boolean isPersistent;
     @NotPersistent        
-    private String operacion;
+    private String dmlOperation;
 }

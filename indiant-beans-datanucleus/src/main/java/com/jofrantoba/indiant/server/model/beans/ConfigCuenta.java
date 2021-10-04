@@ -29,17 +29,17 @@ public class ConfigCuenta implements InterEntity {
 	private String operacion;
 	@Persistent	
 	
-	private Privacidad beanPrivacidadNovedad;
+	private Privacy beanPrivacidadNovedad;
 	@Persistent
 	private String codePrivacidadNovedad;
 	@Persistent	
 	
-	private Privacidad beanPrivacidadInvitacion;
+	private Privacy beanPrivacidadInvitacion;
 	@Persistent
 	private String codePrivacidadInvitacion;
 	@Persistent	
 	
-	private Privacidad beanPrivacidadPerfil;
+	private Privacy beanPrivacidadPerfil;
 	@Persistent
 	private String codePrivacidadPerfil;
 	@Persistent	
@@ -79,10 +79,10 @@ public class ConfigCuenta implements InterEntity {
 	public void setOperacion(String operacion) {
 		this.operacion = operacion;
 	}
-	public Privacidad getBeanPrivacidadNovedad() {
+	public Privacy getBeanPrivacidadNovedad() {
 		return beanPrivacidadNovedad;
 	}
-	public void setBeanPrivacidadNovedad(Privacidad beanPrivacidadNovedad) {
+	public void setBeanPrivacidadNovedad(Privacy beanPrivacidadNovedad) {
 		this.beanPrivacidadNovedad = beanPrivacidadNovedad;
 	}
 	public String getCodePrivacidadNovedad() {
@@ -91,10 +91,10 @@ public class ConfigCuenta implements InterEntity {
 	public void setCodePrivacidadNovedad(String codePrivacidadNovedad) {
 		this.codePrivacidadNovedad = codePrivacidadNovedad;
 	}
-	public Privacidad getBeanPrivacidadInvitacion() {
+	public Privacy getBeanPrivacidadInvitacion() {
 		return beanPrivacidadInvitacion;
 	}
-	public void setBeanPrivacidadInvitacion(Privacidad beanPrivacidadInvitacion) {
+	public void setBeanPrivacidadInvitacion(Privacy beanPrivacidadInvitacion) {
 		this.beanPrivacidadInvitacion = beanPrivacidadInvitacion;
 	}
 	public String getCodePrivacidadInvitacion() {
@@ -103,10 +103,10 @@ public class ConfigCuenta implements InterEntity {
 	public void setCodePrivacidadInvitacion(String codePrivacidadInvitacion) {
 		this.codePrivacidadInvitacion = codePrivacidadInvitacion;
 	}
-	public Privacidad getBeanPrivacidadPerfil() {
+	public Privacy getBeanPrivacidadPerfil() {
 		return beanPrivacidadPerfil;
 	}
-	public void setBeanPrivacidadPerfil(Privacidad beanPrivacidadPerfil) {
+	public void setBeanPrivacidadPerfil(Privacy beanPrivacidadPerfil) {
 		this.beanPrivacidadPerfil = beanPrivacidadPerfil;
 	}
 	public String getCodePrivacidadPerfil() {

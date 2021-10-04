@@ -52,7 +52,7 @@ public class Miembro implements InterEntity {
 	private String nombreColonia;
 	@Persistent
 		
-	private EstadoMiembro beanEstadoMiembro;
+	private MemberStatus beanEstadoMiembro;
 	@Persistent
 	private String codeEstadoMiembro;
 	@Persistent
@@ -166,10 +166,10 @@ public class Miembro implements InterEntity {
 	public void setNombreColonia(String nombreColonia) {
 		this.nombreColonia = nombreColonia;
 	}
-	public EstadoMiembro getBeanEstadoMiembro() {
+	public MemberStatus getBeanEstadoMiembro() {
 		return beanEstadoMiembro;
 	}
-	public void setBeanEstadoMiembro(EstadoMiembro beanEstadoMiembro) {
+	public void setBeanEstadoMiembro(MemberStatus beanEstadoMiembro) {
 		this.beanEstadoMiembro = beanEstadoMiembro;
 	}
 	public String getCodeEstadoMiembro() {
