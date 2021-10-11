@@ -9,11 +9,15 @@ import com.jofrantoba.indiant.server.model.beans.Privacy;
 import com.jofrantoba.model.jdo.daoentity.AbstractMongoJdoDao;
 import com.jofrantoba.model.jdo.pmf.PMF;
 import com.jofrantoba.indiant.server.model.daos.inter.InterDaoPrivacy;
+import lombok.extern.log4j.Log4j2;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author jona
  */
+@Log4j2
+@Repository
 public class DaoPrivacy extends AbstractMongoJdoDao<Privacy> 
         implements InterDaoPrivacy{
     

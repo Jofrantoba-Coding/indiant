@@ -3,22 +3,23 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.jofrantoba.indiant</groupId>
-        <artifactId>indiant</artifactId>
-        <version>0.0.0.1</version>
+        <artifactId>indiant-parent-pom</artifactId>
+        <version>1.0.0</version>
     </parent>
     <name>indiant-beans-datanucleus</name>
     <artifactId>indiant-beans-datanucleus</artifactId>
     <packaging>jar</packaging>
-    <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-        <version.indiant>0.0.0.1</version.indiant>         
+    <properties>              
         <version.javax.jdo>3.2.1-SNAPSHOT</version.javax.jdo>     
         <version.datanucleus-core>6.0.0-m2-SNAPSHOT</version.datanucleus-core>
         <version.datanucleus-api-jdo>6.0.0-m2-SNAPSHOT</version.datanucleus-api-jdo>
         <version.datanucleus-jdo-query>6.0.0-m2-SNAPSHOT</version.datanucleus-jdo-query>
         <version.hibernate-validator-annotation-processor>5.4.3.Final</version.hibernate-validator-annotation-processor>
+        <version.hibernate-validator>7.0.1.Final</version.hibernate-validator>
+        <version.jakarta.el>4.0.0</version.jakarta.el>
+        <version.hibernate-validator-cdi>7.0.1.Final</version.hibernate-validator-cdi>
         <version.datanucleus-maven-plugin>5.2.1</version.datanucleus-maven-plugin>
+        <version.mongodb-driver>4.3.1</version.mongodb-driver>
     </properties>
     <dependencies> 
         <dependency>
@@ -50,7 +51,27 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator-annotation-processor</artifactId>
             <version>${version.hibernate-validator-annotation-processor}</version>
-        </dependency>                                
+        </dependency>     
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${version.hibernate-validator}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>jakarta.el</artifactId>
+            <version>${version.jakarta.el}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator-cdi</artifactId>
+            <version>${version.hibernate-validator-cdi}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongodb-driver-legacy</artifactId>
+            <version>${version.mongodb-driver}</version>
+        </dependency>                           
     </dependencies>    
     <build>
         <plugins>            
@@ -81,15 +102,17 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
-                <configuration>
-                    <source>11</source>
-                    <target>11</target>
-                </configuration>
-            </plugin>
+            <!--
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-compiler-plugin</artifactId>
+    <version>${version.maven-compiler-plugin}</version>
+    <configuration>
+        <source>11</source>
+        <target>11</target>
+    </configuration>
+</plugin>
+            -->
         </plugins>        
     </build>    
 </project>

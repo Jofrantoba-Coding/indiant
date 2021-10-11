@@ -54,4 +54,10 @@ public class TestDaoAccountStatusUpdate extends TestBaseDao{
         entity.setVersion(7L);        
         dao.saveOrUpdate(entity);
     }
+    
+    /*@Test
+    void updateEntity5() throws UnknownException {                
+        DaoAccountStatus dao = new DaoAccountStatus();
+        dao.updateBulk("isPersistent=:1,description=:2,observation:2", "id == :3",new Object[]{true,"Otra descripcion","DEL"});
+    }*/
 }

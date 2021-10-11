@@ -18,8 +18,8 @@ public class TestDaoFriendshipStatusInsert extends TestBaseDao{
     @Test
     void createEntity1() throws UnknownException {
         FriendshipStatus entity = new FriendshipStatus();
-        entity.setId("A");
-        entity.setDescription("ACTIVO");
+        entity.set_id("ACT");
+        entity.setDescription("ACTIVATED");
         entity.setIsPersistent(Boolean.TRUE);
         entity.setVersion(1L);
         DaoFriendshipStatus dao = new DaoFriendshipStatus();
@@ -29,8 +29,8 @@ public class TestDaoFriendshipStatusInsert extends TestBaseDao{
     @Test
     void createEntity2() throws UnknownException {
         FriendshipStatus entity = new FriendshipStatus();
-        entity.setId("E");
-        entity.setDescription("ELIMINADO");
+        entity.set_id("DEL");
+        entity.setDescription("DELETED");
         entity.setVersion(1L);
         entity.setIsPersistent(Boolean.TRUE);
         DaoFriendshipStatus dao = new DaoFriendshipStatus();
@@ -40,8 +40,8 @@ public class TestDaoFriendshipStatusInsert extends TestBaseDao{
     @Test
     void createEntity3() throws UnknownException {
         FriendshipStatus entity = new FriendshipStatus();
-        entity.setId("B");
-        entity.setDescription("BLOQUEADO");
+        entity.set_id("LOC");
+        entity.setDescription("LOCKED");
         entity.setIsPersistent(Boolean.TRUE);
         entity.setVersion(1L);
         DaoFriendshipStatus dao = new DaoFriendshipStatus();

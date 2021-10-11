@@ -3,9 +3,10 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.jofrantoba.indiant</groupId>
-        <artifactId>indiant-parent-pom</artifactId>
-        <version>1.0.0</version>
+        <artifactId>indiant</artifactId>
+        <version>0.0.0.1</version>
     </parent>
-    <artifactId>indiant-shared</artifactId>
+    <artifactId>jofrantoba-model-vertx-mongodb</artifactId>
+    <version>1.0.0.0</version>
     <packaging>jar</packaging>
 </project>

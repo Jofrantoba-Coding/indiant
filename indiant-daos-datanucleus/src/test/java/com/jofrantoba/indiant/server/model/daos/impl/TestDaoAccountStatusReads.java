@@ -25,15 +25,15 @@ public class TestDaoAccountStatusReads extends TestBaseDao{
         DaoAccountStatus dao = new DaoAccountStatus(); 
         Collection<AccountStatus> lista=dao.allFields();
         for(AccountStatus item:lista){
-            log.info("\nID:{}\nDescription:{}\nObservation:{}\nVersion:{}\nPersistent:{} ",item.getId(),item.getDescription(),item.getObservation(),item.getVersion(),item.getIsPersistent());
+            log.info("\nID:{}\nDescription:{}\nObservation:{}\nVersion:{}\nPersistent:{} ",item.get_id(),item.getDescription(),item.getObservation(),item.getVersion(),item.getIsPersistent());
         }        
     }
 
     @Test
     void readAllFieldsEntity() throws UnknownException {
         DaoAccountStatus dao = new DaoAccountStatus();  
-        AccountStatus item=dao.allFields(false, null, 0, "PEN", "id", false);
-        log.info("\nID:{}\nDescription:{}\nObservation:{}\nVersion:{}\nPersistent:{} ",item.getId(),item.getDescription(),item.getObservation(),item.getVersion(),item.getIsPersistent());
+        AccountStatus item=dao.allFields(false, null, 0, "PEN", "_id", false);
+        log.info("\nID:{}\nDescription:{}\nObservation:{}\nVersion:{}\nPersistent:{} ",item.get_id(),item.getDescription(),item.getObservation(),item.getVersion(),item.getIsPersistent());
     }
     
     @Test
@@ -43,24 +43,24 @@ public class TestDaoAccountStatusReads extends TestBaseDao{
         params.put("paramDescription", "DELETED");
         Collection<AccountStatus> lista=dao.allFields(false, null, 0, "this.description == :paramDescription", params, null);
         for(AccountStatus item:lista){
-            log.info("\nID:{}\nDescription:{}\nObservation:{}\nVersion:{}\nPersistent:{} ",item.getId(),item.getDescription(),item.getObservation(),item.getVersion(),item.getIsPersistent());
+            log.info("\nID:{}\nDescription:{}\nObservation:{}\nVersion:{}\nPersistent:{} ",item.get_id(),item.getDescription(),item.getObservation(),item.getVersion(),item.getIsPersistent());
         }
     }
     
     @Test
     void readAllCustomFields()throws UnknownException{
         DaoAccountStatus dao = new DaoAccountStatus(); 
-        Collection<AccountStatus> lista=dao.customField(false, null, 0, "id,description", null, null, null);        
+        Collection<AccountStatus> lista=dao.customField(false, null, 0, "_id,description", null, null, null);        
         for(AccountStatus item:lista){
-            log.info("\nID:{}\nDescription:{}\nObservation:{}\nVersion:{}\nPersistent:{} ",item.getId(),item.getDescription(),item.getObservation(),item.getVersion(),item.getIsPersistent());
+            log.info("\nID:{}\nDescription:{}\nObservation:{}\nVersion:{}\nPersistent:{} ",item.get_id(),item.getDescription(),item.getObservation(),item.getVersion(),item.getIsPersistent());
         }
     }
     
     @Test
     void readCustomFieldsEntity()throws UnknownException{
         DaoAccountStatus dao = new DaoAccountStatus(); 
-        AccountStatus item=dao.customField(false, null, 0, "id,observation", "DEL", "id", true);      
-        log.info("\nID:{}\nDescription:{}\nObservation:{}\nVersion:{}\nPersistent:{} ",item.getId(),item.getDescription(),item.getObservation(),item.getVersion(),item.getIsPersistent());        
+        AccountStatus item=dao.customField(false, null, 0, "_id,observation", "DEL", "_id", true);      
+        log.info("\nID:{}\nDescription:{}\nObservation:{}\nVersion:{}\nPersistent:{} ",item.get_id(),item.getDescription(),item.getObservation(),item.getVersion(),item.getIsPersistent());        
     }
         
     

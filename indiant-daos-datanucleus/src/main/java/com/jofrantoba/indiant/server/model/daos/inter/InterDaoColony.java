@@ -5,13 +5,13 @@
  */
 package com.jofrantoba.indiant.server.model.daos.inter;
 
-import com.jofrantoba.indiant.server.model.beans.AccountStatus;
+import com.jofrantoba.indiant.server.model.beans.Colony;
 import com.jofrantoba.model.jdo.daoentity.InterMongoCrud;
 
 /**
  *
  * @author jona
  */
-public interface InterDaoAccountStatus extends InterMongoCrud<AccountStatus>{
+public interface InterDaoColony extends InterMongoCrud<Colony>{
     
 }

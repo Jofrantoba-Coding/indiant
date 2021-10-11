@@ -8,6 +8,7 @@ package com.jofrantoba.indiant.server.model.beans;
 import com.jofrantoba.indiant.server.shared.beans.InterEntity;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import java.util.Date;
 import javax.jdo.annotations.Inheritance;
 import javax.jdo.annotations.InheritanceStrategy;
 import javax.jdo.annotations.NotPersistent;
@@ -25,12 +26,11 @@ import lombok.extern.log4j.Log4j2;
 @Data
 @PersistenceCapable(detachable="true")
 @Inheritance(strategy=InheritanceStrategy.SUBCLASS_TABLE)
-public class GlobalEntityPkString implements InterEntity{
+public class GlobalEntityPkLong implements InterEntity{
     @NotNull    
-    @NotEmpty
     @PrimaryKey
     @Persistent  
-    private String _id;
+    private Long _id;
     @NotNull    
     @Persistent          
     private Long version=new java.util.Date().getTime(); 

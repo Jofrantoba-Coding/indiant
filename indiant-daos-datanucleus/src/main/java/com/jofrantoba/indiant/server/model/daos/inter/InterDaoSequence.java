@@ -5,13 +5,14 @@
  */
 package com.jofrantoba.indiant.server.model.daos.inter;
 
-import com.jofrantoba.indiant.server.model.beans.AccountStatus;
+import com.jofrantoba.indiant.server.model.beans.Sequence;
 import com.jofrantoba.model.jdo.daoentity.InterMongoCrud;
+import com.jofrantoba.model.jdo.shared.UnknownException;
 
 /**
  *
  * @author jona
  */
-public interface InterDaoAccountStatus extends InterMongoCrud<AccountStatus>{
-    
+public interface InterDaoSequence extends InterMongoCrud<Sequence>{
+    Long getNextValueId(String idSequence)throws UnknownException;    
 }

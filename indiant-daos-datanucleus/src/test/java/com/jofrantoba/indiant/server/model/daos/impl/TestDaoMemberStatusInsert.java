@@ -40,7 +40,7 @@ public class TestDaoMemberStatusInsert {
     @Test
     void createEntity1() throws UnknownException {
         MemberStatus entity = new MemberStatus();
-        entity.setId("R");
+        entity.set_id("R");
         entity.setDescription("RETIRADO (FUERA DEL RANGO DE LA COLONIA)");
         entity.setIsPersistent(Boolean.TRUE);
         entity.setVersion(1L);
@@ -51,7 +51,7 @@ public class TestDaoMemberStatusInsert {
     @Test
     void createEntity2() throws UnknownException {
         MemberStatus entity = new MemberStatus();
-        entity.setId("D");
+        entity.set_id("D");
         entity.setDescription("DESACTIVO (ABANDONÓ LA COLONIA POR DECISIÓN)");
         entity.setVersion(1L);
         entity.setIsPersistent(Boolean.TRUE);
@@ -62,7 +62,7 @@ public class TestDaoMemberStatusInsert {
     @Test
     void createEntity3() throws UnknownException {
         MemberStatus entity = new MemberStatus();
-        entity.setId("A");
+        entity.set_id("A");
         entity.setDescription("ACTIVO (DENTRO DEL RANGO DE LA COLONIA)");
         entity.setIsPersistent(Boolean.TRUE);
         entity.setVersion(1L);

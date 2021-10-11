@@ -40,7 +40,7 @@ public class TestDaoPrivacyInsert {
     @Test
     void createEntity1() throws UnknownException {
         Privacy entity = new Privacy();
-        entity.setId("SY");
+        entity.set_id("SY");
         entity.setDescription("SOLO YO");
         entity.setIsPersistent(Boolean.TRUE);
         entity.setVersion(1L);
@@ -51,7 +51,7 @@ public class TestDaoPrivacyInsert {
     @Test
     void createEntity2() throws UnknownException {
         Privacy entity = new Privacy();
-        entity.setId("PB");
+        entity.set_id("PB");
         entity.setDescription("PUBLICO");
         entity.setVersion(1L);
         entity.setIsPersistent(Boolean.TRUE);
@@ -62,7 +62,7 @@ public class TestDaoPrivacyInsert {
     @Test
     void createEntity3() throws UnknownException {
         Privacy entity = new Privacy();
-        entity.setId("MC");
+        entity.set_id("MC");
         entity.setDescription("MIEMBRO DE MIS COLONIAS");
         entity.setIsPersistent(Boolean.TRUE);
         entity.setVersion(1L);
@@ -73,7 +73,7 @@ public class TestDaoPrivacyInsert {
     @Test
     void createEntity4() throws UnknownException {
         Privacy entity = new Privacy();
-        entity.setId("AM");
+        entity.set_id("AM");
         entity.setDescription("AMIGOS");
         entity.setIsPersistent(Boolean.TRUE);
         entity.setVersion(1L);
@@ -84,7 +84,7 @@ public class TestDaoPrivacyInsert {
     @Test
     void createEntity5() throws UnknownException {
         Privacy entity = new Privacy();
-        entity.setId("AA");
+        entity.set_id("AA");
         entity.setDescription("AMIGOS DE MIS AMIGOS");
         entity.setIsPersistent(Boolean.TRUE);
         entity.setVersion(1L);

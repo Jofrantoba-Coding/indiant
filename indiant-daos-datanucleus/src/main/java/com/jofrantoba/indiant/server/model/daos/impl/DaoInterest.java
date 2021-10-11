@@ -5,10 +5,10 @@
  */
 package com.jofrantoba.indiant.server.model.daos.impl;
 
-import com.jofrantoba.indiant.server.model.beans.SystemParameters;
+import com.jofrantoba.indiant.server.model.beans.Interest;
+import com.jofrantoba.indiant.server.model.daos.inter.InterDaoInterest;
 import com.jofrantoba.model.jdo.daoentity.AbstractMongoJdoDao;
 import com.jofrantoba.model.jdo.pmf.PMF;
-import com.jofrantoba.indiant.server.model.daos.inter.InterDaoSystemParameters;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Repository;
 
@@ -18,13 +18,12 @@ import org.springframework.stereotype.Repository;
  */
 @Log4j2
 @Repository
-public class DaoSystemParameters extends AbstractMongoJdoDao<SystemParameters> 
-        implements InterDaoSystemParameters{
+public class DaoInterest extends AbstractMongoJdoDao<Interest> 
+        implements InterDaoInterest{
     
-    public DaoSystemParameters(){
+    public DaoInterest(){
         super();
-        setClazz(SystemParameters.class);
+        setClazz(Interest.class);
         this.setPmf(PMF.getClassPMF().getPMFStatic());
     }
-    
 }

@@ -40,7 +40,7 @@ public class TestDaoFriendRequestStatusInsert {
     @Test
     void createEntity1() throws UnknownException {
         FriendRequestStatus entity = new FriendRequestStatus();
-        entity.setId("R");
+        entity.set_id("R");
         entity.setDescription("RECHAZADA");
         entity.setIsPersistent(Boolean.TRUE);
         entity.setVersion(1L);
@@ -51,7 +51,7 @@ public class TestDaoFriendRequestStatusInsert {
     @Test
     void createEntity2() throws UnknownException {
         FriendRequestStatus entity = new FriendRequestStatus();
-        entity.setId("P");
+        entity.set_id("P");
         entity.setDescription("PENDIENTE");
         entity.setVersion(1L);
         entity.setIsPersistent(Boolean.TRUE);
@@ -62,7 +62,7 @@ public class TestDaoFriendRequestStatusInsert {
     @Test
     void createEntity3() throws UnknownException {
         FriendRequestStatus entity = new FriendRequestStatus();
-        entity.setId("A");
+        entity.set_id("A");
         entity.setDescription("ACEPTADA");
         entity.setIsPersistent(Boolean.TRUE);
         entity.setVersion(1L);

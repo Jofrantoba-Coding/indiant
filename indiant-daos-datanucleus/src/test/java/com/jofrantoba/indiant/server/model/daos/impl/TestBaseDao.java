@@ -5,11 +5,13 @@
  */
 package com.jofrantoba.indiant.server.model.daos.impl;
 
+import com.jofrantoba.indiant.server.model.beans.ConfigEntity;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import lombok.extern.log4j.Log4j2;
 import org.junit.After;
 import org.junit.Before;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
  *
@@ -17,6 +19,8 @@ import org.junit.Before;
  */
 @Log4j2
 public class TestBaseDao {
+    protected AnnotationConfigApplicationContext contextEntity = new AnnotationConfigApplicationContext(ConfigEntity.class);
+    protected AnnotationConfigApplicationContext contextDao = new AnnotationConfigApplicationContext(ConfigDao.class);
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;

@@ -40,11 +40,11 @@ public class TestAccountStatus {
     void callContextSpring(){   
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ConfigEntity.class);
         AccountStatus bean = context.getBean(AccountStatus.class);        
-        bean.setId("A");        
+        bean.set_id("A");
         AccountStatus bean1 = context.getBean(AccountStatus.class);
-        bean1.setId("B");    
-        System.out.println(bean.getId());
-        System.out.println(bean1.getId());
+        bean.set_id("B");
+        System.out.println(bean.get_id());
+        System.out.println(bean1.get_id());
         context.close();
     }
     
