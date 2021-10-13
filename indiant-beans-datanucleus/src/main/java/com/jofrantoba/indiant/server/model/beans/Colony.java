@@ -8,8 +8,9 @@ package com.jofrantoba.indiant.server.model.beans;
 import com.mongodb.client.model.geojson.Point;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import java.util.Collection;
 import java.util.Date;
-import java.util.List;
+import java.util.HashSet;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import lombok.Data;
@@ -54,6 +55,8 @@ public class Colony extends GlobalEntityPkLong {
     @NotNull    
     @Persistent
     private Long createrIdUser;
+    @NotNull 
+    @NotEmpty
     @Persistent
-    private List<ColonyInterest> colonyInterest;
+    private Collection<ColonyInterest> colonyInterest= new HashSet<ColonyInterest>();
 }

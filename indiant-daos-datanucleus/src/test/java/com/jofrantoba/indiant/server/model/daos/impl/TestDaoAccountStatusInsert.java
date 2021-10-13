@@ -22,6 +22,7 @@ public class TestDaoAccountStatusInsert extends TestBaseDao{
         entity.set_id("PEN");
         entity.setDescription("PENDING");
         entity.setObservation("PENDING ACTIVATION (FIRST STATEMENT OF ACCOUNT)");
+        entity.setStatus("ACT");
         entity.setIsPersistent(Boolean.TRUE);
         entity.setVersion((new Date()).getTime());
         DaoAccountStatus dao = new DaoAccountStatus();
@@ -35,6 +36,7 @@ public class TestDaoAccountStatusInsert extends TestBaseDao{
         entity.setDescription("DELETED");
         entity.setObservation("DELETED (USER DELETES THEIR ACCOUNT)");
         entity.setVersion((new Date()).getTime());
+        entity.setStatus("ACT");
         entity.setIsPersistent(Boolean.TRUE);
         DaoAccountStatus dao = new DaoAccountStatus();
         dao.saveOrUpdate(entity);
@@ -46,6 +48,7 @@ public class TestDaoAccountStatusInsert extends TestBaseDao{
         entity.set_id("DEA");
         entity.setDescription("DEACTIVATED");
         entity.setObservation("DEACTIVATED (USER DEACTIVATES THEIR ACCOUNT TEMPORARILY AND CAN RE-ACTIVATE IT)");
+        entity.setStatus("ACT");
         entity.setIsPersistent(Boolean.TRUE);
         entity.setVersion((new Date()).getTime());
         DaoAccountStatus dao = new DaoAccountStatus();
@@ -58,6 +61,7 @@ public class TestDaoAccountStatusInsert extends TestBaseDao{
         entity.set_id("ACT");
         entity.setDescription("ACTIVATED");
         entity.setObservation("ACTIVATED (CAN BE PASSED FROM STATES: PENDING AND DEACTIVATED)");
+        entity.setStatus("ACT");
         entity.setIsPersistent(Boolean.TRUE);
         entity.setVersion((new Date()).getTime());
         DaoAccountStatus dao = new DaoAccountStatus();

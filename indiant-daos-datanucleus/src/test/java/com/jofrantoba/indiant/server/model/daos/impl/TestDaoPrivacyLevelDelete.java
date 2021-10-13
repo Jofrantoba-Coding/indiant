@@ -18,7 +18,7 @@ import org.junit.jupiter.api.Test;
  * @author jona
  */
 @Log4j2
-public class TestDaoPrivacyDelete {
+public class TestDaoPrivacyLevelDelete {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
@@ -38,31 +38,31 @@ public class TestDaoPrivacyDelete {
      
     @Test
     void deleteEntity1() throws UnknownException {
-        DaoPrivacy dao = new DaoPrivacy();
+        DaoPrivacyLevel dao = new DaoPrivacyLevel();
         dao.delete("SY", "id");
     }
 
     @Test
     void deleteEntity2() throws UnknownException {
-        DaoPrivacy dao = new DaoPrivacy();
+        DaoPrivacyLevel dao = new DaoPrivacyLevel();
         dao.delete("PB", "id");
     }
 
     @Test
     void deleteEntity3() throws UnknownException {
-        DaoPrivacy dao = new DaoPrivacy();
+        DaoPrivacyLevel dao = new DaoPrivacyLevel();
         dao.delete("MC", "id");
     }
     
     @Test
     void deleteEntity4() throws UnknownException {
-        DaoPrivacy dao = new DaoPrivacy();
+        DaoPrivacyLevel dao = new DaoPrivacyLevel();
         dao.delete("AM", "id");
     }
     
     @Test
     void deleteEntity5() throws UnknownException {
-        DaoPrivacy dao = new DaoPrivacy();
+        DaoPrivacyLevel dao = new DaoPrivacyLevel();
         dao.delete("AA", "id");
     }
     

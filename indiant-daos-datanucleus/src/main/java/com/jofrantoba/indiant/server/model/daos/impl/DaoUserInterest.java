@@ -5,10 +5,10 @@
  */
 package com.jofrantoba.indiant.server.model.daos.impl;
 
-import com.jofrantoba.indiant.server.model.beans.Privacy;
+import com.jofrantoba.indiant.server.model.beans.UserInterest;
+import com.jofrantoba.indiant.server.model.daos.inter.InterDaoUserInterest;
 import com.jofrantoba.model.jdo.daoentity.AbstractMongoJdoDao;
 import com.jofrantoba.model.jdo.pmf.PMF;
-import com.jofrantoba.indiant.server.model.daos.inter.InterDaoPrivacy;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Repository;
 
@@ -18,12 +18,12 @@ import org.springframework.stereotype.Repository;
  */
 @Log4j2
 @Repository
-public class DaoPrivacy extends AbstractMongoJdoDao<Privacy> 
-        implements InterDaoPrivacy{
+public class DaoUserInterest extends AbstractMongoJdoDao<UserInterest> 
+        implements InterDaoUserInterest{
     
-    public DaoPrivacy(){
+    public DaoUserInterest(){
         super();
-        setClazz(Privacy.class);
+        setClazz(UserInterest.class);
         this.setPmf(PMF.getClassPMF().getPMFStatic());
     }
     

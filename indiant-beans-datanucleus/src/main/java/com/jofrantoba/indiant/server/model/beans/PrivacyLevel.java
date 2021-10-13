@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 @Data
 @Log4j2
 @PersistenceCapable(detachable = "true")
-public class Privacy extends GlobalEntityPkString {
+public class PrivacyLevel extends GlobalEntityPkString {
 	@Persistent
 	private String description;	
 }

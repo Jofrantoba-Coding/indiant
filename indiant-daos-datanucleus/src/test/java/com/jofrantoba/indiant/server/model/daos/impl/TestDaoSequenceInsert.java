@@ -94,5 +94,5 @@ public class TestDaoSequenceInsert extends TestBaseDao{
         InterDaoSequence dao = contextDao.getBean(DaoSequence.class);          
         dao.saveOrUpdate(entity);
     }
-
+    
 }

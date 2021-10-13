@@ -9,7 +9,8 @@ import com.mongodb.client.model.geojson.Point;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
-import java.util.List;
+import java.util.Collection;
+import java.util.HashSet;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.Unique;
@@ -71,6 +72,6 @@ public class User extends GlobalEntityPkLong {
     private String typeRegister;
     @Persistent
     private Point locationLast;
-    @Persistent
-    private List<UserInterest> userInterest;
+    @Persistent    
+    private Collection<UserInterest> userInterest= new HashSet<UserInterest>();
 }

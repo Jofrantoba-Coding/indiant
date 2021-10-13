@@ -9,6 +9,7 @@ import com.jofrantoba.indiant.server.model.beans.MemberStatus;
 import com.jofrantoba.model.jdo.shared.UnknownException;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.Date;
 import lombok.extern.log4j.Log4j2;
 import org.junit.After;
 import org.junit.Before;
@@ -40,10 +41,12 @@ public class TestDaoMemberStatusInsert {
     @Test
     void createEntity1() throws UnknownException {
         MemberStatus entity = new MemberStatus();
-        entity.set_id("R");
-        entity.setDescription("RETIRADO (FUERA DEL RANGO DE LA COLONIA)");
+        entity.set_id("RET");
+        entity.setDescription("RETIRED");        
+        entity.setObservation("OUTSIDE THE RANGE OF THE COLONY");
         entity.setIsPersistent(Boolean.TRUE);
-        entity.setVersion(1L);
+        entity.setStatus("ACT");
+        entity.setVersion(new Date().getTime());        
         DaoMemberStatus dao = new DaoMemberStatus();
         dao.saveOrUpdate(entity);
     }
@@ -51,9 +54,11 @@ public class TestDaoMemberStatusInsert {
     @Test
     void createEntity2() throws UnknownException {
         MemberStatus entity = new MemberStatus();
-        entity.set_id("D");
-        entity.setDescription("DESACTIVO (ABANDONÓ LA COLONIA POR DECISIÓN)");
-        entity.setVersion(1L);
+        entity.set_id("DEA");
+        entity.setDescription("DEACTIVATE");
+        entity.setObservation("LEFT THE COLONY BY DECISION");
+        entity.setStatus("ACT");
+        entity.setVersion(new Date().getTime());        
         entity.setIsPersistent(Boolean.TRUE);
         DaoMemberStatus dao = new DaoMemberStatus();
         dao.saveOrUpdate(entity);
@@ -62,10 +67,12 @@ public class TestDaoMemberStatusInsert {
     @Test
     void createEntity3() throws UnknownException {
         MemberStatus entity = new MemberStatus();
-        entity.set_id("A");
-        entity.setDescription("ACTIVO (DENTRO DEL RANGO DE LA COLONIA)");
+        entity.set_id("ACT");
+        entity.setDescription("ACTIVE");
+        entity.setObservation("WITHIN THE RANGE OF THE COLONY");
         entity.setIsPersistent(Boolean.TRUE);
-        entity.setVersion(1L);
+        entity.setStatus("ACT");
+        entity.setVersion(new Date().getTime());        
         DaoMemberStatus dao = new DaoMemberStatus();
         dao.saveOrUpdate(entity);
     }

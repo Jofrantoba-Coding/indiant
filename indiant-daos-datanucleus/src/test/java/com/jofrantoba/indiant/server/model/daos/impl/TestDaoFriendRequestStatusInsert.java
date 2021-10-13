@@ -9,6 +9,7 @@ import com.jofrantoba.indiant.server.model.beans.FriendRequestStatus;
 import com.jofrantoba.model.jdo.shared.UnknownException;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.Date;
 import lombok.extern.log4j.Log4j2;
 import org.junit.After;
 import org.junit.Before;
@@ -40,10 +41,11 @@ public class TestDaoFriendRequestStatusInsert {
     @Test
     void createEntity1() throws UnknownException {
         FriendRequestStatus entity = new FriendRequestStatus();
-        entity.set_id("R");
-        entity.setDescription("RECHAZADA");
+        entity.set_id("REJ");
+        entity.setDescription("REJECTED");        
         entity.setIsPersistent(Boolean.TRUE);
-        entity.setVersion(1L);
+        entity.setStatus("ACT");
+        entity.setVersion(new Date().getTime());
         DaoFriendRequestStatus dao = new DaoFriendRequestStatus();
         dao.saveOrUpdate(entity);
     }
@@ -51,9 +53,10 @@ public class TestDaoFriendRequestStatusInsert {
     @Test
     void createEntity2() throws UnknownException {
         FriendRequestStatus entity = new FriendRequestStatus();
-        entity.set_id("P");
-        entity.setDescription("PENDIENTE");
-        entity.setVersion(1L);
+        entity.set_id("PEN");
+        entity.setDescription("PENDING");
+        entity.setStatus("ACT");
+        entity.setVersion(new Date().getTime());
         entity.setIsPersistent(Boolean.TRUE);
         DaoFriendRequestStatus dao = new DaoFriendRequestStatus();
         dao.saveOrUpdate(entity);
@@ -62,10 +65,11 @@ public class TestDaoFriendRequestStatusInsert {
     @Test
     void createEntity3() throws UnknownException {
         FriendRequestStatus entity = new FriendRequestStatus();
-        entity.set_id("A");
-        entity.setDescription("ACEPTADA");
+        entity.set_id("ACC");
+        entity.setDescription("ACCEPTED");
         entity.setIsPersistent(Boolean.TRUE);
-        entity.setVersion(1L);
+        entity.setStatus("ACT");
+        entity.setVersion(new Date().getTime());
         DaoFriendRequestStatus dao = new DaoFriendRequestStatus();
         dao.saveOrUpdate(entity);
     }

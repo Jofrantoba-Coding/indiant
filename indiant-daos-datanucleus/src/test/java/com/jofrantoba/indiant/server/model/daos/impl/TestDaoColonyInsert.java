@@ -6,7 +6,9 @@
 package com.jofrantoba.indiant.server.model.daos.impl;
 
 import com.jofrantoba.indiant.server.model.beans.Colony;
+import com.jofrantoba.indiant.server.model.beans.Interest;
 import com.jofrantoba.indiant.server.model.daos.inter.InterDaoColony;
+import com.jofrantoba.indiant.server.model.daos.inter.InterDaoInterest;
 import com.jofrantoba.indiant.server.model.daos.inter.InterDaoSequence;
 import com.jofrantoba.model.jdo.shared.UnknownException;
 import com.mongodb.client.model.geojson.Point;
@@ -36,7 +38,7 @@ public class TestDaoColonyInsert extends TestBaseDao{
     @Test
     void createEntity1()throws UnknownException {
         Colony entity = contextEntity.getBean(Colony.class);        
-        InterDaoSequence daoSequence = contextDao.getBean(DaoSequence.class);          
+        InterDaoSequence daoSequence = contextDao.getBean(DaoSequence.class);                          
         entity.set_id(daoSequence.getNextValueId(Colony.SEQUENCE));          
         Point locationLast=new Point(new Position(-73.9667, 40.78));
         entity.setLocation(locationLast);
@@ -50,7 +52,7 @@ public class TestDaoColonyInsert extends TestBaseDao{
         Set<ConstraintViolation<Colony>> constraintViolations =
                 validator.validate( entity );
         if(constraintViolations.isEmpty()){
-            InterDaoColony daoColony = contextDao.getBean(DaoColony.class);          
+            InterDaoColony daoColony = contextDao.getBean(DaoColony.class);                
             daoColony.saveOrUpdate(entity);
         }        
     }

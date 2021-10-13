@@ -7,6 +7,7 @@ package com.jofrantoba.indiant.server.model.daos.impl;
 
 import com.jofrantoba.indiant.server.model.beans.FriendshipStatus;
 import com.jofrantoba.model.jdo.shared.UnknownException;
+import java.util.Date;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -20,8 +21,9 @@ public class TestDaoFriendshipStatusInsert extends TestBaseDao{
         FriendshipStatus entity = new FriendshipStatus();
         entity.set_id("ACT");
         entity.setDescription("ACTIVATED");
+        entity.setStatus("ACT");
         entity.setIsPersistent(Boolean.TRUE);
-        entity.setVersion(1L);
+        entity.setVersion(new Date().getTime());
         DaoFriendshipStatus dao = new DaoFriendshipStatus();
         dao.saveOrUpdate(entity);
     }
@@ -31,7 +33,8 @@ public class TestDaoFriendshipStatusInsert extends TestBaseDao{
         FriendshipStatus entity = new FriendshipStatus();
         entity.set_id("DEL");
         entity.setDescription("DELETED");
-        entity.setVersion(1L);
+        entity.setVersion(new Date().getTime());
+        entity.setStatus("ACT");
         entity.setIsPersistent(Boolean.TRUE);
         DaoFriendshipStatus dao = new DaoFriendshipStatus();
         dao.saveOrUpdate(entity);
@@ -43,7 +46,8 @@ public class TestDaoFriendshipStatusInsert extends TestBaseDao{
         entity.set_id("LOC");
         entity.setDescription("LOCKED");
         entity.setIsPersistent(Boolean.TRUE);
-        entity.setVersion(1L);
+        entity.setStatus("ACT");
+        entity.setVersion(new Date().getTime());
         DaoFriendshipStatus dao = new DaoFriendshipStatus();
         dao.saveOrUpdate(entity);
     }

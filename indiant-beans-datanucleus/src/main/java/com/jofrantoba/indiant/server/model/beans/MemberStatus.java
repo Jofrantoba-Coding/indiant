@@ -19,5 +19,7 @@ import org.springframework.stereotype.Component;
 public class MemberStatus extends GlobalEntityPkString {	
 	@Persistent
 	private String description;	
+        @Persistent
+        private String observation;
 	
 }

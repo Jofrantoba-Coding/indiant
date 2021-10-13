@@ -5,12 +5,9 @@
  */
 package com.jofrantoba.indiant.server.model.beans;
 
-import com.mongodb.client.model.geojson.Point;
-import java.util.Collection;
-import java.util.Date;
-import java.util.HashSet;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
+import javax.jdo.annotations.Unique;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.extern.log4j.Log4j2;
@@ -23,20 +20,18 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @Scope("prototype")
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper=false)
 @Data
 @Log4j2
 @PersistenceCapable(detachable = "true")
-public class Member extends GlobalEntityPkLong {
-    public static final String SEQUENCE="Member:_id";
+public class Country extends GlobalEntityPkLong {
+    public static final String SEQUENCE="Country:_id";    
     @Persistent
-    private Long idColony;    
+    @Unique
+    private String name;
     @Persistent
-    private Long idUser;   
+    private String creatorUserType;//SYSTEM,USER,BUSSINESS
     @Persistent
-    private Point location;
-    @Persistent
-    private Date unionDate;    
-    @Persistent    
-    private Collection<MemberInterest> memberInterest= new HashSet<MemberInterest>();
+    private String iconUrl;
+    
 }

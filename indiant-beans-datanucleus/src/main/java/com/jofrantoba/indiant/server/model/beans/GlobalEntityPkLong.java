@@ -33,14 +33,14 @@ public class GlobalEntityPkLong implements InterEntity{
     private Long _id;
     @NotNull    
     @Persistent          
-    private Long version=new java.util.Date().getTime(); 
+    private Long version; 
     @NotNull    
     @NotEmpty
     @Persistent
-    private String status="ACT";//DEL:Deleted,ACT:Activaded:DEA:Deactivated
+    private String status;//DEL:Deleted,ACT:Activaded:DEA:Deactivated
     @NotNull    
     @Persistent       
-    private Boolean isPersistent=true;
+    private Boolean isPersistent;
     @NotPersistent        
     private String dmlOperation;
 }

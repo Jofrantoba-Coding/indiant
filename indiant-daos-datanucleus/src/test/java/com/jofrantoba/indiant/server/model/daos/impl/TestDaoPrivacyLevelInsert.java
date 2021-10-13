@@ -5,10 +5,11 @@
  */
 package com.jofrantoba.indiant.server.model.daos.impl;
 
-import com.jofrantoba.indiant.server.model.beans.Privacy;
+import com.jofrantoba.indiant.server.model.beans.PrivacyLevel;
 import com.jofrantoba.model.jdo.shared.UnknownException;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.Date;
 import lombok.extern.log4j.Log4j2;
 import org.junit.After;
 import org.junit.Before;
@@ -19,7 +20,7 @@ import org.junit.jupiter.api.Test;
  * @author jona
  */
 @Log4j2
-public class TestDaoPrivacyInsert {
+public class TestDaoPrivacyLevelInsert {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
@@ -39,56 +40,61 @@ public class TestDaoPrivacyInsert {
 
     @Test
     void createEntity1() throws UnknownException {
-        Privacy entity = new Privacy();
-        entity.set_id("SY");
-        entity.setDescription("SOLO YO");
+        PrivacyLevel entity = new PrivacyLevel();
+        entity.set_id("ME");
+        entity.setDescription("JUST ME");
         entity.setIsPersistent(Boolean.TRUE);
-        entity.setVersion(1L);
-        DaoPrivacy dao = new DaoPrivacy();
+        entity.setVersion(new Date().getTime());
+        entity.setStatus("ACT");
+        DaoPrivacyLevel dao = new DaoPrivacyLevel();
         dao.saveOrUpdate(entity);
     }
 
     @Test
     void createEntity2() throws UnknownException {
-        Privacy entity = new Privacy();
-        entity.set_id("PB");
-        entity.setDescription("PUBLICO");
-        entity.setVersion(1L);
+        PrivacyLevel entity = new PrivacyLevel();
+        entity.set_id("PU");
+        entity.setDescription("PUBLIC");
+        entity.setVersion(new Date().getTime());
+        entity.setStatus("ACT");
         entity.setIsPersistent(Boolean.TRUE);
-        DaoPrivacy dao = new DaoPrivacy();
+        DaoPrivacyLevel dao = new DaoPrivacyLevel();
         dao.saveOrUpdate(entity);
     }
 
     @Test
     void createEntity3() throws UnknownException {
-        Privacy entity = new Privacy();
+        PrivacyLevel entity = new PrivacyLevel();
         entity.set_id("MC");
-        entity.setDescription("MIEMBRO DE MIS COLONIAS");
+        entity.setDescription("MEMBER OF MY COLONIES");
         entity.setIsPersistent(Boolean.TRUE);
-        entity.setVersion(1L);
-        DaoPrivacy dao = new DaoPrivacy();
+        entity.setVersion(new Date().getTime());
+        entity.setStatus("ACT");
+        DaoPrivacyLevel dao = new DaoPrivacyLevel();
         dao.saveOrUpdate(entity);
     }
     
     @Test
     void createEntity4() throws UnknownException {
-        Privacy entity = new Privacy();
-        entity.set_id("AM");
-        entity.setDescription("AMIGOS");
+        PrivacyLevel entity = new PrivacyLevel();
+        entity.set_id("FR");
+        entity.setDescription("FRIENDS");
         entity.setIsPersistent(Boolean.TRUE);
-        entity.setVersion(1L);
-        DaoPrivacy dao = new DaoPrivacy();
+        entity.setVersion(new Date().getTime());
+        entity.setStatus("ACT");
+        DaoPrivacyLevel dao = new DaoPrivacyLevel();
         dao.saveOrUpdate(entity);
     }
     
     @Test
     void createEntity5() throws UnknownException {
-        Privacy entity = new Privacy();
-        entity.set_id("AA");
-        entity.setDescription("AMIGOS DE MIS AMIGOS");
+        PrivacyLevel entity = new PrivacyLevel();
+        entity.set_id("FF");
+        entity.setDescription("FRIENDS OF MY FRIENDS");
         entity.setIsPersistent(Boolean.TRUE);
-        entity.setVersion(1L);
-        DaoPrivacy dao = new DaoPrivacy();
+        entity.setVersion(new Date().getTime());
+        entity.setStatus("ACT");
+        DaoPrivacyLevel dao = new DaoPrivacyLevel();
         dao.saveOrUpdate(entity);
     }
         

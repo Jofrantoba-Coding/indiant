@@ -5,7 +5,7 @@
  */
 package com.jofrantoba.indiant.server.model.daos.impl;
 
-import com.jofrantoba.indiant.server.model.beans.Privacy;
+import com.jofrantoba.indiant.server.model.beans.PrivacyLevel;
 import com.jofrantoba.model.jdo.shared.UnknownException;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -19,7 +19,7 @@ import org.junit.jupiter.api.Test;
  * @author jona
  */
 @Log4j2
-public class TestDaoPrivacyUpdate {
+public class TestDaoPrivacyLevelUpdate {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
@@ -40,16 +40,16 @@ public class TestDaoPrivacyUpdate {
 
     @Test
     void updateEntity1() throws UnknownException {
-        DaoPrivacy dao = new DaoPrivacy();
-        Privacy entity = dao.find(null, 1, "SY");
+        DaoPrivacyLevel dao = new DaoPrivacyLevel();
+        PrivacyLevel entity = dao.find(null, 1, "SY");
         entity.setDescription("SY");
         entity.setVersion(5L);        
         dao.saveOrUpdate(entity);
     }   
     @Test
     void updateEntity2() throws UnknownException {                
-        DaoPrivacy dao = new DaoPrivacy();
-        Privacy entity=dao.find(null, 1, "PB");
+        DaoPrivacyLevel dao = new DaoPrivacyLevel();
+        PrivacyLevel entity=dao.find(null, 1, "PB");
         entity.setDescription("PB");
         entity.setVersion(6L);        
         dao.saveOrUpdate(entity);
@@ -57,8 +57,8 @@ public class TestDaoPrivacyUpdate {
     
     @Test
     void updateEntity3() throws UnknownException {                
-        DaoPrivacy dao = new DaoPrivacy();
-        Privacy entity=dao.find(null, 1, "MC");
+        DaoPrivacyLevel dao = new DaoPrivacyLevel();
+        PrivacyLevel entity=dao.find(null, 1, "MC");
         entity.setDescription("MC");
         entity.setVersion(7L);        
         dao.saveOrUpdate(entity);
@@ -66,8 +66,8 @@ public class TestDaoPrivacyUpdate {
     
     @Test
     void updateEntity4() throws UnknownException {                
-        DaoPrivacy dao = new DaoPrivacy();
-        Privacy entity=dao.find(null, 1, "AM");
+        DaoPrivacyLevel dao = new DaoPrivacyLevel();
+        PrivacyLevel entity=dao.find(null, 1, "AM");
         entity.setDescription("AM");
         entity.setVersion(7L);        
         dao.saveOrUpdate(entity);
@@ -75,8 +75,8 @@ public class TestDaoPrivacyUpdate {
     
     @Test
     void updateEntity5() throws UnknownException {                
-        DaoPrivacy dao = new DaoPrivacy();
-        Privacy entity=dao.find(null, 1, "AA");
+        DaoPrivacyLevel dao = new DaoPrivacyLevel();
+        PrivacyLevel entity=dao.find(null, 1, "AA");
         entity.setDescription("AA");
         entity.setVersion(7L);        
         dao.saveOrUpdate(entity);
