@@ -5,6 +5,11 @@
  */
 package com.jofrantoba.indiant.server.model.beans;
 
+import javax.jdo.annotations.Column;
+import javax.jdo.annotations.Discriminator;
+import javax.jdo.annotations.DiscriminatorStrategy;
+import javax.jdo.annotations.Embedded;
+import javax.jdo.annotations.Extension;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import lombok.Data;
@@ -27,6 +32,11 @@ public class ColonyInterest extends GlobalEntityPkLong {
     public static final String SEQUENCE="ColonyInterest:_id";
     @Persistent
     private Long idColony;
+    @Embedded(nullIndicatorColumn="interest", members={
+        @Persistent(name="GlobalEntityPkLong._id", columns=@Column(name="idInterest")),
+        @Persistent(name="description", columns=@Column(name="description"))      
+    })
+    @Extension(vendorName="datanucleus", key="nested", value="false")
     @Persistent
     private Interest interest;
     @Persistent

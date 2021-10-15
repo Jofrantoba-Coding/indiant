@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="GlobalEntityPkLong">
+  <ClassDiagramComponents>
+    <Class name="GlobalEntityPkLong" package="com.jofrantoba.indiant.server.model.beans" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="_id" type="Long" visibility="private"/>
+        <Field name="version" type="Long" visibility="private"/>
+        <Field name="status" type="String" visibility="private"/>
+        <Field name="isPersistent" type="Boolean" visibility="private"/>
+        <Field name="dmlOperation" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

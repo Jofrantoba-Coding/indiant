@@ -5,6 +5,8 @@
  */
 package com.jofrantoba.indiant.server.model.beans;
 
+import javax.jdo.annotations.Column;
+import javax.jdo.annotations.Embedded;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.Unique;
@@ -23,11 +25,11 @@ import org.springframework.stereotype.Component;
 @EqualsAndHashCode(callSuper=false)
 @Data
 @Log4j2
-@PersistenceCapable(detachable = "true")
+@PersistenceCapable(detachable = "true",embeddedOnly="false")
 public class Interest extends GlobalEntityPkLong {
     public static final String SEQUENCE="Interest:_id";    
-    @Persistent
-    @Unique
+    //@Unique    
+    @Persistent    
     private String description;    
     
 }

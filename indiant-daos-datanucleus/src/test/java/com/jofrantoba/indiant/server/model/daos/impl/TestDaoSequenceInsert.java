@@ -6,6 +6,7 @@
 package com.jofrantoba.indiant.server.model.daos.impl;
 
 import com.jofrantoba.indiant.server.model.beans.Colony;
+import com.jofrantoba.indiant.server.model.beans.ColonyInterest;
 import com.jofrantoba.indiant.server.model.beans.Interest;
 import com.jofrantoba.indiant.server.model.beans.InterestMovementDetail;
 import com.jofrantoba.indiant.server.model.beans.Member;
@@ -23,7 +24,7 @@ import org.junit.jupiter.api.Test;
  */
 public class TestDaoSequenceInsert extends TestBaseDao{
     
-    @Test
+    /*@Test
     void createEntity1() throws UnknownException {                
         Sequence entity = contextEntity.getBean(Sequence.class);        
         entity.set_id(Interest.SEQUENCE); 
@@ -87,6 +88,18 @@ public class TestDaoSequenceInsert extends TestBaseDao{
     void createEntity6() throws UnknownException {                
         Sequence entity = contextEntity.getBean(Sequence.class);        
         entity.set_id(InterestMovementDetail.SEQUENCE); 
+        entity.setNextValue(1L);
+        entity.setStatus("ACT");
+        entity.setIsPersistent(Boolean.TRUE);
+        entity.setVersion((new Date()).getTime());        
+        InterDaoSequence dao = contextDao.getBean(DaoSequence.class);          
+        dao.saveOrUpdate(entity);
+    }*/
+    
+    @Test
+    void createEntity7() throws UnknownException {                
+        Sequence entity = contextEntity.getBean(Sequence.class);        
+        entity.set_id(ColonyInterest.SEQUENCE); 
         entity.setNextValue(1L);
         entity.setStatus("ACT");
         entity.setIsPersistent(Boolean.TRUE);
