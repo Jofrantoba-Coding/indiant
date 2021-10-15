@@ -34,6 +34,9 @@ public class ColonyInterest extends GlobalEntityPkLong {
     private Long idColony;
     @Embedded(nullIndicatorColumn="interest", members={
         @Persistent(name="GlobalEntityPkLong._id", columns=@Column(name="idInterest")),
+        @Persistent(name="GlobalEntityPkLong.version", columns=@Column(name="versionInterest")),
+        @Persistent(name="GlobalEntityPkLong.isPersistent", columns=@Column(name="isPersistentInterest")),
+        @Persistent(name="GlobalEntityPkLong.status", columns=@Column(name="statusInterest")),
         @Persistent(name="description", columns=@Column(name="description"))      
     })
     @Extension(vendorName="datanucleus", key="nested", value="false")

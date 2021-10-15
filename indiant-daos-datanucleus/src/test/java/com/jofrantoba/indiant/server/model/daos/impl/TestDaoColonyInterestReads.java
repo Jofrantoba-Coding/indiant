@@ -21,7 +21,7 @@ public class TestDaoColonyInterestReads extends TestBaseDao{
     void readEntity1() throws UnknownException {
         DaoColonyInterest dao = new DaoColonyInterest();
         String[] members={"interest"};
-        ColonyInterest item=dao.customField(true,members, 1, "_id,version,isPersistent", 22l,"_id");
+        ColonyInterest item=dao.customField(true,members, 1, "_id,version,isPersistent,interest", 23l,"_id");
         log.info("\nID:{}\nVersion:{}\nPersistent:{}\nDescription:{}\nIdInterest:{}\nVersionInterest:{} ",item.get_id(),item.getVersion(),item.getIsPersistent(),item.getInterest().getDescription(),item.getInterest().get_id(),item.getInterest().getVersion());
     }
     
