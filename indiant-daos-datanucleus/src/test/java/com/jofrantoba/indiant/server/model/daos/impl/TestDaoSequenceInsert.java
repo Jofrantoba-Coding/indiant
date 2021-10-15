@@ -10,9 +10,11 @@ import com.jofrantoba.indiant.server.model.beans.ColonyInterest;
 import com.jofrantoba.indiant.server.model.beans.Interest;
 import com.jofrantoba.indiant.server.model.beans.InterestMovementDetail;
 import com.jofrantoba.indiant.server.model.beans.Member;
+import com.jofrantoba.indiant.server.model.beans.MemberInterest;
 import com.jofrantoba.indiant.server.model.beans.MovementInterest;
 import com.jofrantoba.indiant.server.model.beans.Sequence;
 import com.jofrantoba.indiant.server.model.beans.User;
+import com.jofrantoba.indiant.server.model.beans.UserInterest;
 import com.jofrantoba.indiant.server.model.daos.inter.InterDaoSequence;
 import com.jofrantoba.model.jdo.shared.UnknownException;
 import java.util.Date;
@@ -96,10 +98,34 @@ public class TestDaoSequenceInsert extends TestBaseDao{
         dao.saveOrUpdate(entity);
     }*/
     
-    @Test
+    /*@Test
     void createEntity7() throws UnknownException {                
         Sequence entity = contextEntity.getBean(Sequence.class);        
         entity.set_id(ColonyInterest.SEQUENCE); 
+        entity.setNextValue(1L);
+        entity.setStatus("ACT");
+        entity.setIsPersistent(Boolean.TRUE);
+        entity.setVersion((new Date()).getTime());        
+        InterDaoSequence dao = contextDao.getBean(DaoSequence.class);          
+        dao.saveOrUpdate(entity);
+    }*/
+    
+    @Test
+    void createEntity8() throws UnknownException {                
+        Sequence entity = contextEntity.getBean(Sequence.class);        
+        entity.set_id(MemberInterest.SEQUENCE); 
+        entity.setNextValue(1L);
+        entity.setStatus("ACT");
+        entity.setIsPersistent(Boolean.TRUE);
+        entity.setVersion((new Date()).getTime());        
+        InterDaoSequence dao = contextDao.getBean(DaoSequence.class);          
+        dao.saveOrUpdate(entity);
+    }
+    
+    @Test
+    void createEntity9() throws UnknownException {                
+        Sequence entity = contextEntity.getBean(Sequence.class);        
+        entity.set_id(UserInterest.SEQUENCE); 
         entity.setNextValue(1L);
         entity.setStatus("ACT");
         entity.setIsPersistent(Boolean.TRUE);

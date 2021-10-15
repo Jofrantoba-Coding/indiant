@@ -6,7 +6,9 @@
 package com.jofrantoba.indiant.server.model.daos.impl;
 
 import com.jofrantoba.indiant.server.model.beans.Colony;
+import com.jofrantoba.indiant.server.model.beans.Interest;
 import com.jofrantoba.indiant.server.model.beans.Member;
+import com.jofrantoba.indiant.server.model.beans.MemberInterest;
 import com.jofrantoba.indiant.server.model.daos.inter.InterDaoColony;
 import com.jofrantoba.indiant.server.model.daos.inter.InterDaoMember;
 import com.jofrantoba.indiant.server.model.daos.inter.InterDaoSequence;
@@ -48,12 +50,17 @@ public class TestDaoMemberInsert extends TestBaseDao{
         entity.setIsPersistent(Boolean.TRUE);        
         entity.setIdUser(28L);
         entity.setIdColony(7L);
+        DaoMemberInterest dao = new DaoMemberInterest();         
+        MemberInterest item=dao.find(1l);
+        Interest inter=(Interest)dao.detachObject(item.getInterest());
+        item=dao.detach(item);
+        dao.closePm();        
         Set<ConstraintViolation<Member>> constraintViolations =
                 validator.validate( entity );
-        if(constraintViolations.isEmpty()){
+        //if(constraintViolations.isEmpty()){
             InterDaoMember daoColony = contextDao.getBean(DaoMember.class);          
             daoColony.saveOrUpdate(entity);
-        }        
+        //}        
     }
     
 }

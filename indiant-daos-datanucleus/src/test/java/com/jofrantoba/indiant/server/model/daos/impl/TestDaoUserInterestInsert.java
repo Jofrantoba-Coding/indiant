@@ -5,11 +5,13 @@
  */
 package com.jofrantoba.indiant.server.model.daos.impl;
 
-import com.jofrantoba.indiant.server.model.beans.Interest;
-import com.jofrantoba.indiant.server.model.beans.User;
+import com.jofrantoba.indiant.server.model.beans.Colony;
 import com.jofrantoba.indiant.server.model.beans.UserInterest;
+import com.jofrantoba.indiant.server.model.beans.Interest;
+import com.jofrantoba.indiant.server.model.daos.inter.InterDaoColony;
+import com.jofrantoba.indiant.server.model.daos.inter.InterDaoUserInterest;
+import com.jofrantoba.indiant.server.model.daos.inter.InterDaoInterest;
 import com.jofrantoba.indiant.server.model.daos.inter.InterDaoSequence;
-import com.jofrantoba.indiant.server.model.daos.inter.InterDaoUser;
 import com.jofrantoba.model.jdo.shared.UnknownException;
 import com.mongodb.client.model.geojson.Point;
 import com.mongodb.client.model.geojson.Position;
@@ -26,7 +28,7 @@ import org.junit.jupiter.api.Test;
  *
  * @author jona
  */
-public class TestDaoUserInsert extends TestBaseDao{
+public class TestDaoUserInterestInsert extends TestBaseDao{
     private static Validator validator;
 
     @BeforeAll
@@ -37,26 +39,21 @@ public class TestDaoUserInsert extends TestBaseDao{
     
     @Test
     void createEntity1()throws UnknownException {
-        User entity = contextEntity.getBean(User.class);        
-        InterDaoSequence daoSequence = contextDao.getBean(DaoSequence.class);          
-        entity.set_id(daoSequence.getNextValueId(User.SEQUENCE));  
-        entity.setEmail("jnas2302@gmail.com");
-        Point locationLast=new Point(new Position(-73.9667, 40.78));
-        entity.setLocationLast(locationLast);   
-        Date creationDate=new Date();
-        entity.setVersion(creationDate.getTime());
+        UserInterest entity = contextEntity.getBean(UserInterest.class);        
+        InterDaoSequence daoSequence = contextDao.getBean(DaoSequence.class);
+        InterDaoInterest daoInterest = contextDao.getBean(DaoInterest.class);                          
+        entity.set_id(daoSequence.getNextValueId(UserInterest.SEQUENCE));          
+        entity.setStatus("ACT");
+        entity.setVersion(new Date().getTime());
         entity.setIsPersistent(Boolean.TRUE);
-        DaoUserInterest dao = new DaoUserInterest();         
-        UserInterest item=dao.find(1l);
-        Interest inter=(Interest)dao.detachObject(item.getInterest());
-        item=dao.detach(item);
-        dao.closePm();
-        entity.getUserInterest().add(item);
-        Set<ConstraintViolation<User>> constraintViolations =
+        entity.setFashionValue(200L);       
+        entity.setInterest(daoInterest.find(null, 0, 5l));         
+        entity.setIdUser(30l);        
+        Set<ConstraintViolation<UserInterest>> constraintViolations =
                 validator.validate( entity );
         //if(constraintViolations.isEmpty()){
-            InterDaoUser daoUser = contextDao.getBean(DaoUser.class);          
-            daoUser.saveOrUpdate(entity);
+            InterDaoUserInterest daoUserInterest = contextDao.getBean(DaoUserInterest.class);                
+            daoUserInterest.saveOrUpdate(entity);
         //}        
     }
     
