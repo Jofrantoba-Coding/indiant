@@ -20,7 +20,7 @@ public class TestDaoInterestReads extends TestBaseDao{
     @Test
     void readEntity1() throws UnknownException {
         DaoInterest dao = new DaoInterest();
-        Interest item=dao.customField(false, null, 0, "_id,description", 5l,"_id");
+        Interest item=dao.customField(false, null, 0, "_id,description", 5l,"_id");        
         log.info("\nID:{}\nDescription:{}\nVersion:{}\nPersistent:{} ",item.get_id(),item.getDescription(),item.getVersion(),item.getIsPersistent());
     }
    
