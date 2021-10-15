@@ -5,6 +5,9 @@
  */
 package com.jofrantoba.indiant.server.model.beans;
 
+import javax.jdo.annotations.Column;
+import javax.jdo.annotations.Embedded;
+import javax.jdo.annotations.Extension;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import lombok.Data;
@@ -27,6 +30,14 @@ public class UserInterest extends GlobalEntityPkLong {
     public static final String SEQUENCE="UserInterest:_id";
     @Persistent
     private Long idUser;
+    @Embedded(nullIndicatorColumn="interest", members={
+        @Persistent(name="GlobalEntityPkLong._id", columns=@Column(name="idInterest")),
+        @Persistent(name="GlobalEntityPkLong.version", columns=@Column(name="versionInterest")),
+        @Persistent(name="GlobalEntityPkLong.isPersistent", columns=@Column(name="isPersistentInterest")),
+        @Persistent(name="GlobalEntityPkLong.status", columns=@Column(name="statusInterest")),
+        @Persistent(name="description", columns=@Column(name="description"))      
+    })
+    @Extension(vendorName="datanucleus", key="nested", value="false")
     @Persistent
     private Interest interest;
     @Persistent

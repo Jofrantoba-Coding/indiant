@@ -11,6 +11,9 @@ import jakarta.validation.constraints.NotNull;
 import java.util.Collection;
 import java.util.Date;
 import java.util.HashSet;
+import javax.jdo.annotations.Element;
+import javax.jdo.annotations.Embedded;
+import javax.jdo.annotations.Join;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import lombok.Data;
@@ -57,6 +60,14 @@ public class Colony extends GlobalEntityPkLong {
     private Long createrIdUser;
     @NotNull 
     @NotEmpty
+    @Element(embeddedMapping={
+         @Embedded(members={
+            @Persistent(name="interest", column="interest"),
+         @Persistent(name="fashionValue", column="fashionValue"),
+         @Persistent(name="idColony", column="idColony")        
+         })
+    })
+    @Join(column="idColony")
     @Persistent
     private Collection<ColonyInterest> colonyInterest= new HashSet<ColonyInterest>();
 }

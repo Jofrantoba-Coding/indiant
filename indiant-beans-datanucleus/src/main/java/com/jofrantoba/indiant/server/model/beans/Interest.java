@@ -30,6 +30,6 @@ public class Interest extends GlobalEntityPkLong {
     public static final String SEQUENCE="Interest:_id";    
     //@Unique    
     @Persistent    
-    private String description;        
+    private String description;            
             
 }

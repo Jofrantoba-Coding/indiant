@@ -6,6 +6,7 @@
 package com.jofrantoba.indiant.server.model.daos.impl;
 
 import com.jofrantoba.indiant.server.model.beans.Colony;
+import com.jofrantoba.indiant.server.model.beans.ColonyInterest;
 import com.jofrantoba.indiant.server.model.beans.Interest;
 import com.jofrantoba.indiant.server.model.daos.inter.InterDaoColony;
 import com.jofrantoba.indiant.server.model.daos.inter.InterDaoInterest;
@@ -40,6 +41,7 @@ public class TestDaoColonyInsert extends TestBaseDao{
         Colony entity = contextEntity.getBean(Colony.class);        
         InterDaoSequence daoSequence = contextDao.getBean(DaoSequence.class);                          
         entity.set_id(daoSequence.getNextValueId(Colony.SEQUENCE));          
+        daoSequence.closePm();
         Point locationLast=new Point(new Position(-73.9667, 40.78));
         entity.setLocation(locationLast);
         entity.setName("C"+entity.get_id());
@@ -49,12 +51,18 @@ public class TestDaoColonyInsert extends TestBaseDao{
         entity.setVersion(creationDate.getTime());
         entity.setIsPersistent(Boolean.TRUE);        
         entity.setCreaterIdUser(28L);
+        DaoColonyInterest dao = new DaoColonyInterest();         
+        ColonyInterest item=dao.find(23l);
+        Interest inter=(Interest)dao.detachObject(item.getInterest());
+        item=dao.detach(item);
+        dao.closePm();
+        entity.getColonyInterest().add(item);
         Set<ConstraintViolation<Colony>> constraintViolations =
                 validator.validate( entity );
-        if(constraintViolations.isEmpty()){
-            InterDaoColony daoColony = contextDao.getBean(DaoColony.class);                
+        //if(constraintViolations.isEmpty()){
+            DaoColony daoColony = contextDao.getBean(DaoColony.class);         
             daoColony.saveOrUpdate(entity);
-        }        
+        //}        
     }
     
 }
