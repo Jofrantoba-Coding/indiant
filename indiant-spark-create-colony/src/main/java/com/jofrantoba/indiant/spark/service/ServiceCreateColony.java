@@ -70,13 +70,14 @@ public class ServiceCreateColony implements InterServiceCreateColony{
         Dataset<Row> dataInterestUser=sparkSession.sql("select interest._id  from data_interest_user");
         dataInterestUser.show(1, false);
         
+        /*Empieza algoritmo indiant*/        
         
         Dataset<Row> dataUser=sparkSession.sql("select data_interest_user._id,data_interest_colony.interest,coalesce(data_interest_user.fashionValue,0)+1 as fashionValue, case when data_interest_user._id is null then 'insert' else 'update' end as dmlOperation from data_interest_colony left join data_interest_user on data_interest_colony.interest._id=data_interest_user.interest._id");
         dataUser.show(1, false);
         log.info("Tabla para actualizar intereses de usuario");
                 
         
-        Dataset<Row> dataMember=sparkSession.sql("select data_interest_user._id as idUser,data_interest_colony.idColony,data_interest_colony.interest,1 as fashionValue, 'insert'as dmlOperation from data_interest_colony left join data_interest_user on data_interest_colony.interest._id=data_interest_user.interest._id");
+        Dataset<Row> dataMember=sparkSession.sql("select data_interest_colony.idColony,data_interest_colony.interest,1 as fashionValue, 'insert'as dmlOperation from data_interest_colony");
         dataMember.show(1, false);
         log.info("Tabla para crear miembro de colonia");
         return new ResponseEntity<>("Background create colony:", HttpStatus.OK);        
