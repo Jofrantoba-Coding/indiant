@@ -16,6 +16,7 @@
         <module>indiant-daos-datanucleus</module>
         <module>indiant-shared</module>
         <module>jofrantoba-model-vertx-mongodb</module>
+        <module>indiant-spark-create-colony</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> 
