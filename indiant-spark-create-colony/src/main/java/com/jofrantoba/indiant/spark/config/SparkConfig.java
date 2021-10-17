@@ -55,8 +55,10 @@ public class SparkConfig {
                 .builder()
                 .sparkContext(javaSparkContext.sc())
                 .appName(sparkProperties.getSparkAppName())
-                .config("spark.mongodb.input.uri", "mongodb://mtoral:Maej1019@ec2-35-163-220-126.us-west-2.compute.amazonaws.com:27017,ec2-34-222-157-77.us-west-2.compute.amazonaws.com:27017/colhum?retryWrites=true&w=majority&readPreference=primary&ssl=false/colhum.Colony")
-                .config("spark.mongodb.output.uri", "mongodb://mtoral:Maej1019@ec2-35-163-220-126.us-west-2.compute.amazonaws.com:27017,ec2-34-222-157-77.us-west-2.compute.amazonaws.com:27017/colhum?retryWrites=true&w=majority&readPreference=primary&ssl=false/colhum.Colony")
+                //.config("spark.mongodb.input.uri", "mongodb://mtoral:Maej1019@ec2-35-163-220-126.us-west-2.compute.amazonaws.com:27017,ec2-34-222-157-77.us-west-2.compute.amazonaws.com:27017/colhum.Colony")
+                //.config("spark.mongodb.output.uri", "mongodb://mtoral:Maej1019@ec2-35-163-220-126.us-west-2.compute.amazonaws.com:27017,ec2-34-222-157-77.us-west-2.compute.amazonaws.com:27017/colhum.Colony")
+                //.config("spark.mongodb.input.uri", "mongodb://mtoral:Maej1019@ec2-35-163-220-126.us-west-2.compute.amazonaws.com:27017/colhum.Colony")
+                //.config("spark.mongodb.output.uri", "mongodb://mtoral:Maej1019@ec2-35-163-220-126.us-west-2.compute.amazonaws.com:27017/colhum.Colony")
                 .getOrCreate();
     }
 

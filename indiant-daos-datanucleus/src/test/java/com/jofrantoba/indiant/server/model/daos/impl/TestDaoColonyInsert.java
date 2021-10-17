@@ -9,6 +9,7 @@ import com.jofrantoba.indiant.server.model.beans.Colony;
 import com.jofrantoba.indiant.server.model.beans.ColonyInterest;
 import com.jofrantoba.indiant.server.model.beans.Interest;
 import com.jofrantoba.indiant.server.model.daos.inter.InterDaoColony;
+import com.jofrantoba.indiant.server.model.daos.inter.InterDaoColonyInterest;
 import com.jofrantoba.indiant.server.model.daos.inter.InterDaoInterest;
 import com.jofrantoba.indiant.server.model.daos.inter.InterDaoSequence;
 import com.jofrantoba.model.jdo.shared.UnknownException;
@@ -38,30 +39,45 @@ public class TestDaoColonyInsert extends TestBaseDao{
     
     @Test
     void createEntity1()throws UnknownException {
-        Colony entity = contextEntity.getBean(Colony.class);        
-        InterDaoSequence daoSequence = contextDao.getBean(DaoSequence.class);                          
-        entity.set_id(daoSequence.getNextValueId(Colony.SEQUENCE));          
+        ColonyInterest entityColonyInterest = contextEntity.getBean(ColonyInterest.class);        
+        Colony entityColony = contextEntity.getBean(Colony.class);                                
+        InterDaoSequence daoSequence = contextDao.getBean(DaoSequence.class);
+        InterDaoInterest daoInterest = contextDao.getBean(DaoInterest.class);             
+        entityColony.set_id(daoSequence.getNextValueId(Colony.SEQUENCE));          
+        entityColonyInterest.setIdColony(entityColony.get_id());
+        entityColonyInterest.set_id(daoSequence.getNextValueId(ColonyInterest.SEQUENCE));          
+        entityColonyInterest.setStatus("ACT");
+        entityColonyInterest.setVersion(new Date().getTime());
+        entityColonyInterest.setIsPersistent(Boolean.TRUE);
+        entityColonyInterest.setFashionValue(1L);       
+        entityColonyInterest.setInterest(daoInterest.find(null, 0, 5l));        
+        Set<ConstraintViolation<ColonyInterest>> constraintViolations =
+                validator.validate( entityColonyInterest );
+        if(constraintViolations.isEmpty()){
+            InterDaoColonyInterest daoColonyInterest = contextDao.getBean(DaoColonyInterest.class);                
+            entityColonyInterest=daoColonyInterest.saveOrUpdateReturn(entityColonyInterest,true);
+        }                        
         daoSequence.closePm();
         Point locationLast=new Point(new Position(-73.9667, 40.78));
-        entity.setLocation(locationLast);
-        entity.setName("C"+entity.get_id());
-        entity.setRadius(500.50);
+        entityColony.setLocation(locationLast);
+        entityColony.setName("C"+entityColony.get_id());
+        entityColony.setRadius(500.50);
         Date creationDate=new Date();
-        entity.setCreationDate(creationDate);
-        entity.setVersion(creationDate.getTime());
-        entity.setIsPersistent(Boolean.TRUE);        
-        entity.setCreaterIdUser(28L);
-        DaoColonyInterest dao = new DaoColonyInterest();         
+        entityColony.setCreationDate(creationDate);
+        entityColony.setVersion(creationDate.getTime());
+        entityColony.setIsPersistent(Boolean.TRUE);        
+        entityColony.setCreaterIdUser(3L);
+        /*DaoColonyInterest dao = new DaoColonyInterest();         
         ColonyInterest item=dao.find(23l);
         Interest inter=(Interest)dao.detachObject(item.getInterest());
         item=dao.detach(item);
-        dao.closePm();
-        entity.getColonyInterest().add(item);
-        Set<ConstraintViolation<Colony>> constraintViolations =
-                validator.validate( entity );
+        dao.closePm();*/
+        entityColony.getColonyInterest().add(entityColonyInterest);
+        /*Set<ConstraintViolation<Colony>> constraintViolations =
+                validator.validate( entityColony );*/
         //if(constraintViolations.isEmpty()){
             DaoColony daoColony = contextDao.getBean(DaoColony.class);         
-            daoColony.saveOrUpdate(entity);
+            daoColony.saveOrUpdate(entityColony);
         //}        
     }
     
