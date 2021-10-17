@@ -33,12 +33,12 @@ public class SparkConfig {
     public SparkConf sparkConf() {
         SparkConf conf = new SparkConf()
                 .setAppName(sparkProperties.getSparkAppName())
-                /*.setMaster(sparkProperties.getSparkMaster())
+                /*.setMaster(sparkProperties.getSparkMaster())                
                         .set("spark.driver.memory",sparkProperties.getSparkDriverMemory())
                         .set("spark.worker.memory",sparkProperties.getSparkWorkerMemory())
                         .set("spark.executor.memory",sparkProperties.getSparkExecutorMemory())
                         .set("spark.rpc.message.maxSize",sparkProperties.getSparkRpcMessageMaxSize());*/
-                .setMaster("local[*]")
+                .setMaster("local[*]")                
                 ;//just use in test
         return conf;
     }
