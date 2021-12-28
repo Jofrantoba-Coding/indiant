@@ -11,8 +11,10 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import java.util.Collection;
 import java.util.HashSet;
+import javax.jdo.annotations.Column;
 import javax.jdo.annotations.Element;
 import javax.jdo.annotations.Embedded;
+import javax.jdo.annotations.Extension;
 import javax.jdo.annotations.Join;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
@@ -58,13 +60,10 @@ public class User extends GlobalEntityPkLong {
     @Persistent
     private String Region;
     @Persistent
-    private String place;
+    private String place;    
+    @NotNull    
     @Persistent
-    private String accountStatus;
-    @NotNull
-    @NotEmpty
-    @Persistent
-    private String creationDate;        
+    private java.util.Date creationDate;        
     @Persistent
     private String profilePicture;
     @Persistent
@@ -75,6 +74,16 @@ public class User extends GlobalEntityPkLong {
     private String typeRegister;
     @Persistent
     private Point locationLast;
+    @Embedded(nullIndicatorColumn="accountStatus", members={
+        @Persistent(name="GlobalEntityPkString._id", columns=@Column(name="id")),
+        @Persistent(name="GlobalEntityPkString.version", columns=@Column(name="version")),
+        @Persistent(name="GlobalEntityPkString.isPersistent", columns=@Column(name="isPersistent")),
+        @Persistent(name="GlobalEntityPkString.status", columns=@Column(name="status")),
+        @Persistent(name="description", columns=@Column(name="description")),
+        @Persistent(name="observation", columns=@Column(name="observation"))      
+    })  
+    @Persistent
+    private AccountStatus accountStatus;
     @Element(embeddedMapping={
          @Embedded(members={
             @Persistent(name="interest", column="interest"),

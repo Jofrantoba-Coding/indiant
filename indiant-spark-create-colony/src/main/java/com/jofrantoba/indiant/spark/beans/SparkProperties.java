@@ -37,4 +37,13 @@ public class SparkProperties {
     @NotNull
     @Value("${spark.rpc.message.maxSize}")
     private String sparkRpcMessageMaxSize;
+    @NotNull
+    @Value("${spark.dynamicAllocation.enabled}")
+    private String sparkDynamicAllocationEnabled;
+    @NotNull
+    @Value("${spark.driver.host}")
+    private String sparkDriverHost;
+    @NotNull
+    @Value("${spark.sql.autoBroadcastJoinThreshold}")
+    private String sparkSqlAutoBroadcastJoinThreshold;    
 }

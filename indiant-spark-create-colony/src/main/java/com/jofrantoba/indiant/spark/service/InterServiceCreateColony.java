@@ -5,6 +5,8 @@
  */
 package com.jofrantoba.indiant.spark.service;
 
+import com.jofrantoba.indiant.spark.beans.Count;
+import java.util.List;
 import org.springframework.http.ResponseEntity;
 
 /**
@@ -13,4 +15,5 @@ import org.springframework.http.ResponseEntity;
  */
 public interface InterServiceCreateColony {
     ResponseEntity<String> taskCreateColony(Long idColony);
+    List<Count> count();
 }

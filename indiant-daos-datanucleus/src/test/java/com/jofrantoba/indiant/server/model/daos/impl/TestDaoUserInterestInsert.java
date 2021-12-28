@@ -47,8 +47,8 @@ public class TestDaoUserInterestInsert extends TestBaseDao{
         entity.setVersion(new Date().getTime());
         entity.setIsPersistent(Boolean.TRUE);
         entity.setFashionValue(200L);       
-        entity.setInterest(daoInterest.find(null, 0, 5l));         
-        entity.setIdUser(30l);        
+        entity.setInterest(daoInterest.find(null, 0, 1l));         
+        entity.setIdUser(4l);        
         Set<ConstraintViolation<UserInterest>> constraintViolations =
                 validator.validate( entity );
         //if(constraintViolations.isEmpty()){

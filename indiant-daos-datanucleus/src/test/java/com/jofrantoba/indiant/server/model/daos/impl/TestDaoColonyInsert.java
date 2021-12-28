@@ -50,7 +50,7 @@ public class TestDaoColonyInsert extends TestBaseDao{
         entityColonyInterest.setVersion(new Date().getTime());
         entityColonyInterest.setIsPersistent(Boolean.TRUE);
         entityColonyInterest.setFashionValue(1L);       
-        entityColonyInterest.setInterest(daoInterest.find(null, 0, 5l));        
+        entityColonyInterest.setInterest(daoInterest.find(null, 0, 1l));        
         Set<ConstraintViolation<ColonyInterest>> constraintViolations =
                 validator.validate( entityColonyInterest );
         if(constraintViolations.isEmpty()){
@@ -66,7 +66,7 @@ public class TestDaoColonyInsert extends TestBaseDao{
         entityColony.setCreationDate(creationDate);
         entityColony.setVersion(creationDate.getTime());
         entityColony.setIsPersistent(Boolean.TRUE);        
-        entityColony.setCreaterIdUser(3L);
+        entityColony.setCreaterIdUser(6L);
         /*DaoColonyInterest dao = new DaoColonyInterest();         
         ColonyInterest item=dao.find(23l);
         Interest inter=(Interest)dao.detachObject(item.getInterest());

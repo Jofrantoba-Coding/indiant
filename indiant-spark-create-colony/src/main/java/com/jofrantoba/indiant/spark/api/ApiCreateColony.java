@@ -5,7 +5,9 @@
  */
 package com.jofrantoba.indiant.spark.api;
 
+import com.jofrantoba.indiant.spark.beans.Count;
 import com.jofrantoba.indiant.spark.service.InterServiceCreateColony;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,6 +29,11 @@ public class ApiCreateColony implements InterApiCreateColony{
     @Override
     public ResponseEntity<String> taskCreateColony(@PathVariable Long idColony) {
         return serviceCreateColony.taskCreateColony(idColony);
+    }
+    
+    @GetMapping("wordcount")
+    public ResponseEntity<List<Count>> words() {
+        return new ResponseEntity<>(serviceCreateColony.count(), HttpStatus.OK);
     }
     
 }

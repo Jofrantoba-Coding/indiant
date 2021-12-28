@@ -22,7 +22,7 @@ public class TestDaoAccountStatusDelete extends TestBaseDao{
     @Test
     void deleteEntity1() throws UnknownException {
         DaoAccountStatus dao = new DaoAccountStatus();
-        dao.delete("PEN", "_id");
+        dao.delete("PEN", "_id");        
     }
 
     @Test

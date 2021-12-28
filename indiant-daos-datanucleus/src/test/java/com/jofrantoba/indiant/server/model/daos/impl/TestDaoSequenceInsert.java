@@ -26,7 +26,7 @@ import org.junit.jupiter.api.Test;
  */
 public class TestDaoSequenceInsert extends TestBaseDao{
     
-    /*@Test
+    @Test
     void createEntity1() throws UnknownException {                
         Sequence entity = contextEntity.getBean(Sequence.class);        
         entity.set_id(Interest.SEQUENCE); 
@@ -96,9 +96,9 @@ public class TestDaoSequenceInsert extends TestBaseDao{
         entity.setVersion((new Date()).getTime());        
         InterDaoSequence dao = contextDao.getBean(DaoSequence.class);          
         dao.saveOrUpdate(entity);
-    }*/
+    }
     
-    /*@Test
+    @Test
     void createEntity7() throws UnknownException {                
         Sequence entity = contextEntity.getBean(Sequence.class);        
         entity.set_id(ColonyInterest.SEQUENCE); 
@@ -108,7 +108,7 @@ public class TestDaoSequenceInsert extends TestBaseDao{
         entity.setVersion((new Date()).getTime());        
         InterDaoSequence dao = contextDao.getBean(DaoSequence.class);          
         dao.saveOrUpdate(entity);
-    }*/
+    }
     
     @Test
     void createEntity8() throws UnknownException {                
